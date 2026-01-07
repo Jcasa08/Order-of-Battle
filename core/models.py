@@ -21,7 +21,7 @@ class Unit(models.Model):
         ('special', 'Special'),
         ('rare', 'Rare'),
     ]
-    name = models.CharField(max_length=100)
+    name = models.TextField(max_length=100)
     faction = models.ForeignKey(Faction, on_delete=models.CASCADE, related_name='units')
     role = models.CharField(max_length=10, choices=ROLE)
     points = models.PositiveIntegerField()
