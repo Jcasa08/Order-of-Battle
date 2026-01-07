@@ -34,7 +34,7 @@ else:
     DEBUG = False
 
 ALLOWED_HOSTS = [
-    'order-of-battle-app.herokuapp.com',
+    '.herokuapp.com',
     '127.0.0.1',
 ]
 
