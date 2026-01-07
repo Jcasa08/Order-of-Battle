@@ -1,9 +1,11 @@
 from django.db import models
 
 # Create your models here.
+
+
 class Faction(models.Model):
     name = models.CharField(max_length=100, unique=True)
-    
+
     class Meta:
         verbose_name = "Faction"
         verbose_name_plural = "Factions"
@@ -11,7 +13,7 @@ class Faction(models.Model):
 
     def __str__(self):
         return self.name
-    
+
 
 class Unit(models.Model):
     ROLE = [
@@ -22,7 +24,8 @@ class Unit(models.Model):
         ('rare', 'Rare'),
     ]
     name = models.TextField(max_length=100)
-    faction = models.ForeignKey(Faction, on_delete=models.CASCADE, related_name='units')
+    faction = models.ForeignKey(
+        Faction, on_delete=models.CASCADE, related_name='units')
     role = models.CharField(max_length=10, choices=ROLE)
     points = models.PositiveIntegerField()
     min_size = models.PositiveIntegerField(default=5)
