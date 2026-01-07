@@ -33,7 +33,10 @@ if os.path.isfile('env.py'):
 else:
     DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'order-of-battle-app.herokuapp.com',
+    '127.0.0.1',
+]
 
 
 # Application definition
@@ -46,6 +49,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'lists',
+    'home',
+    'core',
+    'accounts',
 ]
 
 MIDDLEWARE = [
