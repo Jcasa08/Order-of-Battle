@@ -5,6 +5,7 @@ from django.db import models
 
 class Faction(models.Model):
     name = models.CharField(max_length=100, unique=True)
+    description = models.TextField(blank=True, null=True, default=None)
 
     class Meta:
         verbose_name = "Faction"
