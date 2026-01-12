@@ -1,8 +1,25 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<h1>Order of Battle</h1>
-<p class="lead">The definitive army builder.</p>
+<div class="container">
+    <div class="row">
+        <div class="col text-center">
+            <h1>Welcome to Order of Battle</h1>
+            <p class="lead">Your ultimate resource for tabletop wargaming.</p>
+            <a class="btn btn-primary btn-lg" href="#" role="button">Get Started</a>
+        </div>
+        <div class="row">
+            <img src="{% static 'images/OoB-background4.png' %}" class="col-12 mt-4 mb-4 img-fluid" alt="Order of Battle hero image">
+        </div>
+        <div class="col-12 text-center">
+            <h2>About Order of Battle</h2>
+            <p>Order of Battle is a comprehensive platform designed to enhance your tabletop wargaming experience. Whether you're a seasoned veteran or a newcomer, our resources and tools are here to help you strategize, plan, and execute your battles with precision.</p>
+            <p> We aim to provide a seamless experience for wargamers of all levels, offering a variety of features to support your gaming needs.</p>
+            <p>However, please note that Order of Battle is currently in its early stages of development. We are actively working on adding more features and improving the platform to better serve our community. Your feedback is invaluable to us as we continue to grow and enhance the experience.</p>
+        </div>
+    </div>
+</div>
+
 
 
 {% endblock content %}
