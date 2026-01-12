@@ -1,0 +1,29 @@
+{% extends "base.html" %} 
+{% load static %} 
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="text-center">
+            <h1>The World of Ashenfell</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div>
+            <img src="{% static 'images/Oob-map.png' %}" class="col-12 mt-4 mb-4 img-fluid" alt="Map of Ashenfell">
+        </div>
+        <div class="text-center">
+            <h2>Geography</h2>
+            <p>
+                Ashenfell is a continent roughly the size of medieval Europe,
+                bordered by the Endless Ocean to the west, the Bloodstone Mountains to
+                the north, the Shattered Isles to the south, and what is known as the Sylvaan Tangle
+                to the east. The name itself is grim prophecy, ash from countless
+                burnings, and the fell promise of more death to come.
+            </p>
+        </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+{% endblock %}
