@@ -10,4 +10,6 @@ class UnitAdmin(SummernoteModelAdmin):
 
 
 # Register your models here.
-admin.site.register(Faction)
+@admin.register(Faction)
+class FactionAdmin(SummernoteModelAdmin):
+    summernote_fields = ('description',)
