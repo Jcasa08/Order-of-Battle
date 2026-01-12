@@ -1,0 +1,46 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1>{{ faction.name }}</h1>
+            <hr />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            {% if faction.description %}
+            <p class="lead">{{ faction.description }}</p>
+            {% else %}
+            <p class="text-muted">No description available for this faction.</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-12">
+            <h2>Units</h2>
+            {% if faction.units.all %}
+            <ul class="list-group">
+                {% for unit in faction.units.all %}
+                <li class="list-group-item">
+                    <strong>{{ unit.name }}</strong> - {{ unit.get_role_display
+                    }} ({{ unit.points }} points)
+                </li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <p class="text-muted">No units available for this faction.</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-12">
+            <a href="{% url 'factions' %}" class="btn btn-secondary"
+                >Back to Factions</a
+            >
+        </div>
+    </div>
+</div>
+{% endblock %}

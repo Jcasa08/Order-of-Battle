@@ -4,12 +4,26 @@
         <div class="text-center">
             <h1>Factions</h1>
             <p class="lead">Explore the various factions of Ashenfell.</p>
-    </div>
-    <div class="row">
-        <div class="text-center">
-            <btn class="btn btn-primary">Duchies of Men</btn>
-            <btn class="btn btn-primary">Orc Tribes</btn>
-            <btn claSS="btn btn-primary">Elven Realms</btn>
+        </div>
+        <div class="row">
+            <div class="text-center">
+                <a
+                    href="{% url 'faction_detail' faction_name='Duchies of Men' %}"
+                    class="btn btn-primary"
+                    >Duchies of Men</a
+                >
+                <a
+                    href="{% url 'faction_detail' faction_name='Orc Tribes' %}"
+                    class="btn btn-primary"
+                    >Orc Tribes</a
+                >
+                <a
+                    href="{% url 'faction_detail' faction_name='Elven Realms' %}"
+                    class="btn btn-primary"
+                    >Elven Realms</a
+                >
+            </div>
         </div>
     </div>
 </div>
+{% endblock %}
