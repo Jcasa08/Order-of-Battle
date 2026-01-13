@@ -8,6 +8,7 @@ from .views import (
     AddUnitToArmyListView,
     RemoveUnitFromArmyListView,
     UpdateListUnitView,
+    DuplicateArmyListView,
 )
 
 urlpatterns = [
@@ -18,6 +19,8 @@ urlpatterns = [
     path('<int:pk>/delete/', ArmyListDeleteView.as_view(), name='armylist_delete'),
     path('<int:pk>/add-unit/', AddUnitToArmyListView.as_view(),
          name='add_unit_to_list'),
+    path('<int:pk>/duplicate/', DuplicateArmyListView.as_view(),
+         name='duplicate_armylist'),
     path('unit/<int:pk>/remove/', RemoveUnitFromArmyListView.as_view(),
          name='remove_unit_from_list'),
     path('unit/<int:pk>/update/', UpdateListUnitView.as_view(),
