@@ -1,0 +1,100 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1>
+                {% if army_list.pk %}Edit{% else %}Create{% endif %} Army List
+            </h1>
+            <hr />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="card">
+                <div class="card-body">
+                    <form method="post">
+                        {% csrf_token %}
+
+                        <div class="mb-3">
+                            <label
+                                for="{{ form.name.id_for_label }}"
+                                class="form-label"
+                                >List Name *</label
+                            >
+                            {{ form.name }} {% if form.name.errors %}
+                            <div class="text-danger">
+                                {{ form.name.errors }}
+                            </div>
+                            {% endif %}
+                            <div class="form-text">
+                                Give your army list a unique name
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label
+                                for="{{ form.owner.id_for_label }}"
+                                class="form-label"
+                                >Owner *</label
+                            >
+                            {{ form.owner }} {% if form.owner.errors %}
+                            <div class="text-danger">
+                                {{ form.owner.errors }}
+                            </div>
+                            {% endif %}
+                        </div>
+
+                        <div class="mb-3">
+                            <label
+                                for="{{ form.faction.id_for_label }}"
+                                class="form-label"
+                                >Faction *</label
+                            >
+                            {{ form.faction }} {% if form.faction.errors %}
+                            <div class="text-danger">
+                                {{ form.faction.errors }}
+                            </div>
+                            {% endif %}
+                            <div class="form-text">
+                                Select which faction this army list belongs to
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label
+                                for="{{ form.point_limit.id_for_label }}"
+                                class="form-label"
+                                >Point Limit</label
+                            >
+                            {{ form.point_limit }} {% if form.point_limit.errors
+                            %}
+                            <div class="text-danger">
+                                {{ form.point_limit.errors }}
+                            </div>
+                            {% endif %}
+                            <div class="form-text">
+                                Optional: Set a maximum point limit for this
+                                list
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+                            <a
+                                href="{% url 'armylist_list' %}"
+                                class="btn btn-secondary"
+                                >Cancel</a
+                            >
+                            <button type="submit" class="btn btn-primary">
+                                {% if army_list.pk %}Update{% else %}Create{%
+                                endif %} Army List
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
