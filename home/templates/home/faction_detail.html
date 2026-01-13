@@ -10,7 +10,7 @@
     <div class="row">
         <div class="col-12">
             {% if faction.description %}
-            <p class="lead">{{ faction.description }}</p>
+            <p class="lead">{{ faction.description|safe }}</p>
             {% else %}
             <p class="text-muted">No description available for this faction.</p>
             {% endif %}
