@@ -7,6 +7,7 @@ from .views import (
     ArmyListDeleteView,
     AddUnitToArmyListView,
     RemoveUnitFromArmyListView,
+    UpdateListUnitView,
 )
 
 urlpatterns = [
@@ -19,4 +20,6 @@ urlpatterns = [
          name='add_unit_to_list'),
     path('unit/<int:pk>/remove/', RemoveUnitFromArmyListView.as_view(),
          name='remove_unit_from_list'),
+    path('unit/<int:pk>/update/', UpdateListUnitView.as_view(),
+         name='update_list_unit'),
 ]
