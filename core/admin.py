@@ -4,6 +4,7 @@ from django_summernote.admin import SummernoteModelAdmin
 
 @admin.register(Unit)
 class UnitAdmin(SummernoteModelAdmin):
+    summernote_fields = ('description',)
     list_display = ('name', 'faction', 'role', 'points', 'min_size', 'max_size')
     list_filter = ('faction', 'role')
     search_fields = ('name',)

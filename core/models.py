@@ -27,6 +27,7 @@ class Unit(models.Model):
     name = models.TextField(max_length=100)
     faction = models.ForeignKey(
         Faction, on_delete=models.CASCADE, related_name='units')
+    description = models.TextField(blank=True, null=True, default=None)
     role = models.CharField(max_length=10, choices=ROLE)
     points = models.PositiveIntegerField()
     min_size = models.PositiveIntegerField(default=5)

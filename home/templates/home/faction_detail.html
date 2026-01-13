@@ -21,14 +21,27 @@
         <div class="col-12">
             <h2>Units</h2>
             {% if faction.units.all %}
-            <ul class="list-group">
+            <div class="row">
                 {% for unit in faction.units.all %}
-                <li class="list-group-item">
-                    <strong>{{ unit.name }}</strong> - {{ unit.get_role_display
-                    }} ({{ unit.points }} points)
-                </li>
+                <div class="col-md-6 mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ unit.name }}</h5>
+                            <p class="card-text">
+                                <strong>Role:</strong> {{ unit.get_role_display
+                                }}<br />
+                                <strong>Points:</strong> {{ unit.points }}<br />
+                                <strong>Size:</strong> {{ unit.min_size }}-{{
+                                unit.max_size }}
+                            </p>
+                            {% if unit.description %}
+                            <p class="card-text">{{ unit.description|safe }}</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
                 {% endfor %}
-            </ul>
+            </div>
             {% else %}
             <p class="text-muted">No units available for this faction.</p>
             {% endif %}
