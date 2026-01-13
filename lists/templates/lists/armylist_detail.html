@@ -1,0 +1,222 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="d-flex justify-content-between align-items-center">
+                <h1>{{ army_list.name }}</h1>
+                <div>
+                    <a
+                        href="{% url 'armylist_update' army_list.pk %}"
+                        class="btn btn-warning"
+                        >Edit List</a
+                    >
+                    <a
+                        href="{% url 'armylist_delete' army_list.pk %}"
+                        class="btn btn-danger"
+                        >Delete List</a
+                    >
+                    <form
+                        method="post"
+                        action="{% url 'duplicate_armylist' army_list.pk %}"
+                        style="display: inline"
+                    >
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-secondary">
+                            Duplicate
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <hr />
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">List Information</h5>
+                    <p>
+                        <strong>Faction:</strong> {{ army_list.faction.name }}
+                    </p>
+                    <p>
+                        <strong>Owner:</strong> {{ army_list.owner.username }}
+                    </p>
+                    <p>
+                        <strong>Total Points:</strong> {{ army_list.total_points
+                        }}
+                    </p>
+                    <p>
+                        <strong>Point Limit:</strong>
+                        {% if army_list.point_limit %} {{ army_list.point_limit
+                        }} {% if army_list.total_points > army_list.point_limit
+                        %}
+                        <span class="badge bg-danger">Over Limit!</span>
+                        {% elif army_list.total_points == army_list.point_limit
+                        %}
+                        <span class="badge bg-success">At Limit</span>
+                        {% else %}
+                        <span class="badge bg-info"
+                            >{{
+                            army_list.point_limit|add:"-"|add:army_list.total_points
+                            }} remaining</span
+                        >
+                        {% endif %} {% else %}
+                        <span class="text-muted">No limit</span>
+                        {% endif %}
+                    </p>
+                    <p>
+                        <strong>Created:</strong> {{
+                        army_list.created_on|date:"M d, Y g:i A" }}
+                    </p>
+                    <p>
+                        <strong>Last Updated:</strong> {{
+                        army_list.updated_on|date:"M d, Y g:i A" }}
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Add Unit to List</h5>
+                    <form
+                        method="post"
+                        action="{% url 'add_unit_to_list' army_list.pk %}"
+                    >
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="unit_id" class="form-label"
+                                >Select Unit</label
+                            >
+                            <select
+                                name="unit_id"
+                                id="unit_id"
+                                class="form-select"
+                                required
+                            >
+                                <option value="">Choose a unit...</option>
+                                {% for unit in army_list.faction.units.all %}
+                                <option value="{{ unit.id }}">
+                                    {{ unit.name }} - {{ unit.get_role_display
+                                    }} ({{ unit.points }} pts)
+                                </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="quantity" class="form-label"
+                                >Quantity</label
+                            >
+                            <input
+                                type="number"
+                                name="quantity"
+                                id="quantity"
+                                class="form-control"
+                                value="5"
+                                min="1"
+                                required
+                            />
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            Add Unit
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <h2>Units in List</h2>
+            {% if army_list.list_units.all %}
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Unit Name</th>
+                            <th>Role</th>
+                            <th>Points per Unit</th>
+                            <th>Quantity</th>
+                            <th>Subtotal</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for list_unit in army_list.list_units.all %}
+                        <tr>
+                            <td>{{ list_unit.unit.name }}</td>
+                            <td>{{ list_unit.unit.get_role_display }}</td>
+                            <td>{{ list_unit.unit.points }}</td>
+                            <td>
+                                <form
+                                    method="post"
+                                    action="{% url 'update_list_unit' list_unit.pk %}"
+                                    class="d-inline"
+                                >
+                                    {% csrf_token %}
+                                    <input
+                                        type="number"
+                                        name="quantity"
+                                        value="{{ list_unit.quantity }}"
+                                        min="1"
+                                        class="form-control form-control-sm d-inline"
+                                        style="width: 80px"
+                                        onchange="this.form.submit()"
+                                    />
+                                </form>
+                            </td>
+                            <td>{{ list_unit.subtotal_points }}</td>
+                            <td>
+                                <form
+                                    method="post"
+                                    action="{% url 'remove_unit_from_list' list_unit.pk %}"
+                                    style="display: inline"
+                                >
+                                    {% csrf_token %}
+                                    <button
+                                        type="submit"
+                                        class="btn btn-sm btn-danger"
+                                        onclick="return confirm('Remove this unit from the list?')"
+                                    >
+                                        Remove
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                        <tr class="table-info">
+                            <td colspan="4" class="text-end">
+                                <strong>Total:</strong>
+                            </td>
+                            <td colspan="2">
+                                <strong
+                                    >{{ army_list.total_points }} points</strong
+                                >
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            {% else %}
+            <div class="alert alert-info">
+                <p>
+                    No units in this army list yet. Use the form above to add
+                    units!
+                </p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-12">
+            <a href="{% url 'armylist_list' %}" class="btn btn-secondary"
+                >Back to Army Lists</a
+            >
+        </div>
+    </div>
+</div>
+{% endblock %}
