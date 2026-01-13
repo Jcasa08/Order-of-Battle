@@ -24,7 +24,7 @@ class Unit(models.Model):
         ('special', 'Special'),
         ('rare', 'Rare'),
     ]
-    name = models.TextField(max_length=100)
+    name = models.CharField(max_length=100)
     faction = models.ForeignKey(
         Faction, on_delete=models.CASCADE, related_name='units')
     description = models.TextField(blank=True, null=True, default=None)
@@ -32,6 +32,7 @@ class Unit(models.Model):
     points = models.PositiveIntegerField()
     min_size = models.PositiveIntegerField(default=5)
     max_size = models.PositiveIntegerField(default=20)
+    image = models.ImageField(upload_to='unit_images/', blank=True, null=True)
 
     class Meta:
         ordering = ['faction', 'name', 'role']
