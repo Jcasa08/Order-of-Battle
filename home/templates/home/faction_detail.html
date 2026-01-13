@@ -28,11 +28,9 @@
                         <div class="card-body">
                             <h5 class="card-title">{{ unit.name }}</h5>
                             <p class="card-text">
-                                <strong>Role:</strong> {{ unit.get_role_display
-                                }}<br />
+                                <strong>Role:</strong> {{ unit.get_role_display}}<br />
                                 <strong>Points:</strong> {{ unit.points }}<br />
-                                <strong>Size:</strong> {{ unit.min_size }}-{{
-                                unit.max_size }}
+                                <strong>Size:</strong> {{ unit.min_size }}-{{unit.max_size }}
                             </p>
                             {% if unit.description %}
                             <p class="card-text">{{ unit.description|safe }}</p>
