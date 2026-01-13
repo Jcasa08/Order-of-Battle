@@ -67,8 +67,7 @@
                                 class="form-label"
                                 >Point Limit</label
                             >
-                            {{ form.point_limit }} {% if form.point_limit.errors
-                            %}
+                            {{ form.point_limit }} {% if form.point_limit.errors %}
                             <div class="text-danger">
                                 {{ form.point_limit.errors }}
                             </div>
@@ -86,8 +85,7 @@
                                 >Cancel</a
                             >
                             <button type="submit" class="btn btn-primary">
-                                {% if army_list.pk %}Update{% else %}Create{%
-                                endif %} Army List
+                                {% if army_list.pk %}Update{% else %}Create Army List
                             </button>
                         </div>
                     </form>
@@ -96,5 +94,5 @@
         </div>
     </div>
 </div>
-
+{% endif %}
 {% endblock %}
