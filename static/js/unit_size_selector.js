@@ -1,45 +1,67 @@
-document
-            .getElementById("unit_id")
-            .addEventListener("change", async function () {
-                const unitId = this.value;
-                const unitSizeSelect = document.getElementById("unit_size");
+document.addEventListener("DOMContentLoaded", function () {
+    const unitSelect = document.getElementById("unit_id");
+    const unitSizeSelect = document.getElementById("unit_size");
+    const qtyInput = document.getElementById("quantity");
+    const pointsPreview = document.getElementById("points_per_unit_preview");
+    const subtotalPreview = document.getElementById("subtotal_preview");
 
-                if (!unitId) {
-                    // Reset to defaults if no unit selected
-                    unitSizeSelect.innerHTML =
-                        '<option value="">Select a unit size...</option>';
-                    return;
-                }
+    function updatePreviews(data) {
+        if (!pointsPreview || !subtotalPreview) return;
+        if (!data) {
+            pointsPreview.textContent = "";
+            subtotalPreview.textContent = "";
+            return;
+        }
+        const size = parseInt(unitSizeSelect.value || data.min_size, 10);
+        const scaled = Math.floor((data.points * size) / data.min_size);
+        pointsPreview.textContent = `${scaled} pts`;
+        const qty = parseInt(qtyInput?.value || "1", 10);
+        subtotalPreview.textContent = `${scaled * qty} pts`;
+    }
 
-                try {
-                    const response = await fetch(`/core/api/unit/${unitId}/`);
-                    const data = await response.json();
+    async function fetchUnitData(unitId) {
+        try {
+            const response = await fetch(`/core/api/unit/${unitId}/`);
+            const data = await response.json();
+            return response.ok ? data : null;
+        } catch (err) {
+            console.error("Error fetching unit details:", err);
+            return null;
+        }
+    }
 
-                    if (response.ok) {
-                        // Clear existing options
-                        unitSizeSelect.innerHTML = "";
+    unitSelect?.addEventListener("change", async function () {
+        const unitId = this.value;
+        if (!unitId) {
+            unitSizeSelect.innerHTML =
+                '<option value="">Select a unit size...</option>';
+            updatePreviews(null);
+            return;
+        }
 
-                        // Generate options from min_size to max_size, incrementing by min_size
-                        for (
-                            let size = data.min_size;
-                            size <= data.max_size;
-                            size += data.min_size
-                        ) {
-                            const option = document.createElement("option");
-                            option.value = size;
-                            option.textContent = size;
-                            unitSizeSelect.appendChild(option);
-                        }
+        const data = await fetchUnitData(unitId);
+        if (!data) {
+            updatePreviews(null);
+            return;
+        }
 
-                        // Select the first (minimum) option by default
-                        unitSizeSelect.value = data.min_size;
-                    } else {
-                        console.error(
-                            "Error fetching unit details:",
-                            data.error
-                        );
-                    }
-                } catch (error) {
-                    console.error("Error:", error);
-                }
-            });
+        // Populate unit size options
+        unitSizeSelect.innerHTML = "";
+        for (
+            let size = data.min_size;
+            size <= data.max_size;
+            size += data.min_size
+        ) {
+            const option = document.createElement("option");
+            option.value = size;
+            option.textContent = size;
+            unitSizeSelect.appendChild(option);
+        }
+        unitSizeSelect.value = data.min_size;
+
+        // Initial preview and listeners
+        updatePreviews(data);
+        unitSizeSelect.onchange = () => updatePreviews(data);
+        qtyInput?.addEventListener("input", () => updatePreviews(data));
+    });
+});

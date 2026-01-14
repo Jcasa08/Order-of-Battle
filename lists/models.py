@@ -43,3 +43,10 @@ class ListUnit(models.Model):
 
     def __str__(self):
         return f"{self.quantity} x {self.unit.name} in {self.army_list.name}"
+
+    def scaled_points(self):
+        """Points per unit, scaled by current unit_size.
+        If unit_size is not set, default to unit.min_size.
+        """
+        size = self.unit_size or self.unit.min_size
+        return (self.unit.points * size) // self.unit.min_size

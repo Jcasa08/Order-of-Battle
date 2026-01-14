@@ -125,6 +125,24 @@ class AddUnitToArmyListView(LoginRequiredMixin, View):
 
         unit = get_object_or_404(Unit, pk=unit_id)
 
+        # Read and validate unit_size from form (default to unit.min_size)
+        try:
+            unit_size = int(request.POST.get('unit_size', unit.min_size))
+        except (TypeError, ValueError):
+            unit_size = unit.min_size
+
+        # Ensure unit_size is valid: between min/max and multiple of min_size
+        if (
+            unit_size < unit.min_size or
+            unit_size > unit.max_size or
+            unit_size % unit.min_size != 0
+        ):
+            messages.error(
+                request,
+                f'Invalid unit size for {unit.name}. Choose between {unit.min_size} and {unit.max_size} in steps of {unit.min_size}.'
+            )
+            return redirect('armylist_detail', pk=pk)
+
         # Check if unit belongs to the same faction
         if unit.faction != army_list.faction:
             messages.error(
@@ -135,15 +153,20 @@ class AddUnitToArmyListView(LoginRequiredMixin, View):
         list_unit, created = ListUnit.objects.get_or_create(
             army_list=army_list,
             unit=unit,
-            defaults={'quantity': quantity}
+            defaults={'quantity': quantity, 'unit_size': unit_size}
         )
 
         if not created:
+            # Update unit_size to selected value and increment quantity
+            list_unit.unit_size = unit_size
             list_unit.quantity += quantity
             list_unit.save()
 
-        # Calculate subtotal
-        list_unit.subtotal_points = list_unit.quantity * unit.points
+        # Scaled points for the selected unit_size
+        scaled_unit_points = (unit.points * unit_size) // unit.min_size
+
+        # Calculate subtotal (quantity * scaled points)
+        list_unit.subtotal_points = list_unit.quantity * scaled_unit_points
         list_unit.save()
 
         # Update army list total
@@ -205,7 +228,10 @@ class UpdateListUnitView(LoginRequiredMixin, View):
             return redirect('armylist_detail', pk=army_list.pk)
 
         list_unit.quantity = new_quantity
-        list_unit.subtotal_points = list_unit.quantity * list_unit.unit.points
+        # Use scaled points according to unit_size
+        scaled_unit_points = (list_unit.unit.points * (
+            list_unit.unit_size or list_unit.unit.min_size)) // list_unit.unit.min_size
+        list_unit.subtotal_points = list_unit.quantity * scaled_unit_points
         list_unit.save()
 
         # Update army list total
@@ -245,6 +271,7 @@ class DuplicateArmyListView(LoginRequiredMixin, View):
             ListUnit.objects.create(
                 army_list=new_list,
                 unit=list_unit.unit,
+                unit_size=list_unit.unit_size or list_unit.unit.min_size,
                 quantity=list_unit.quantity,
                 subtotal_points=list_unit.subtotal_points
             )

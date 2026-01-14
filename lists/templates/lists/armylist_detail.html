@@ -39,27 +39,27 @@
                     <p>
                         <strong>Faction:</strong> {{ army_list.faction.name }}
                     </p>
-                    
+
                     <p>
                         <strong>Total Points:</strong> {{ army_list.total_points }}
                     </p>
                     <p>
                         <strong>Point Limit:</strong>
-                        {% if army_list.point_limit %} 
-                        {{ army_list.point_limit }} {% if army_list.total_points > army_list.point_limit %}
+                        {% if army_list.point_limit %} {{ army_list.point_limit }} 
+                        {% if army_list.total_points > army_list.point_limit %}
                         <span class="badge bg-danger">Over Limit!</span>
                         {% elif army_list.total_points == army_list.point_limit %}
                         <span class="badge bg-success">At Limit</span>
                         {% else %}
-                        <span class="badge bg-info"
-                            >{{ army_list.point_limit|add:"-"|add:army_list.total_points }} 
+                        <span class="badge bg-info">
+                            {{ army_list.point_limit|add:"-"|add:army_list.total_points }} 
                             remaining</span>
                         {% endif %} {% else %}
                         <span class="text-muted">No limit</span>
                         {% endif %}
                     </p>
                     <p>
-                        <strong>Created:</strong> 
+                        <strong>Created:</strong>
                         {{army_list.created_on|date:"M d, Y g:i A" }}
                     </p>
                     <p>
@@ -124,6 +124,12 @@
                             >
                                 <option value="">Select a unit...</option>
                             </select>
+                            <div class="form-text mt-1">
+                                <span>Points per unit: </span>
+                                <span id="points_per_unit_preview"></span>
+                                <span class="ms-3">Subtotal: </span>
+                                <span id="subtotal_preview"></span>
+                            </div>
                         </div>
                         <button type="submit" class="btn btn-primary">
                             Add Unit
@@ -157,7 +163,8 @@
                         <tr>
                             <td>{{ list_unit.unit.name }}</td>
                             <td>{{ list_unit.unit.get_role_display }}</td>
-                            <td>{{ list_unit.unit.points }}</td>
+                            <td>{{ list_unit.scaled_points }}</td>
+                            <td>{{ list_unit.unit_size }}</td>
                             <td>
                                 <form
                                     method="post"
