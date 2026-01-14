@@ -2,71 +2,124 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy, reverse
 from django.contrib import messages
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.core.exceptions import PermissionDenied
 from django.db.models import Sum
 from django.views import View
 from .models import ArmyList, ListUnit
 from core.models import Unit
 
 
-class ArmyListListView(ListView):
-    """Display all army lists"""
+class ArmyListListView(LoginRequiredMixin, ListView):
+    """Display user's army lists"""
     model = ArmyList
     template_name = 'lists/armylist_list.html'
     context_object_name = 'army_lists'
     paginate_by = 10
+    login_url = 'account_login'
+    redirect_field_name = 'next'
+
+    def get_queryset(self):
+        """Filter to show only the current user's army lists"""
+        return ArmyList.objects.filter(owner=self.request.user).order_by('-updated_on')
 
 
-class ArmyListDetailView(DetailView):
+class ArmyListDetailView(LoginRequiredMixin, DetailView):
     """Show a single army list with all its units"""
     model = ArmyList
     template_name = 'lists/armylist_detail.html'
     context_object_name = 'army_list'
+    login_url = 'account_login'
+    redirect_field_name = 'next'
+
+    def get_object(self, queryset=None):
+        """Ensure user can only access their own lists"""
+        obj = super().get_object(queryset)
+        if obj.owner != self.request.user:
+            raise PermissionDenied(
+                "You do not have permission to view this army list.")
+        return obj
 
 
-class ArmyListCreateView(CreateView):
+class ArmyListCreateView(LoginRequiredMixin, CreateView):
     """Create a new army list"""
     model = ArmyList
     template_name = 'lists/armylist_form.html'
-    fields = ['name', 'owner', 'faction', 'point_limit']
+    fields = ['name', 'faction', 'point_limit']
+    login_url = 'account_login'
+    redirect_field_name = 'next'
 
     def form_valid(self, form):
-        messages.success(self.request, f'Army list "{form.instance.name}" created successfully!')
+        """Set the owner to the current user"""
+        form.instance.owner = self.request.user
+        messages.success(
+            self.request, f'Army list "{form.instance.name}" created successfully!')
         return super().form_valid(form)
 
     def get_success_url(self):
         return reverse('armylist_detail', kwargs={'pk': self.object.pk})
 
 
-class ArmyListUpdateView(UpdateView):
+class ArmyListUpdateView(LoginRequiredMixin, UpdateView):
     """Edit an existing army list"""
     model = ArmyList
     template_name = 'lists/armylist_form.html'
-    fields = ['name', 'owner', 'faction', 'point_limit']
+    fields = ['name', 'faction', 'point_limit']
+    login_url = 'account_login'
+    redirect_field_name = 'next'
+
+    def get_object(self, queryset=None):
+        """Ensure user can only edit their own lists"""
+        obj = super().get_object(queryset)
+        if obj.owner != self.request.user:
+            raise PermissionDenied(
+                "You do not have permission to edit this army list.")
+        return obj
 
     def form_valid(self, form):
-        messages.success(self.request, f'Army list "{form.instance.name}" updated successfully!')
+        messages.success(
+            self.request, f'Army list "{form.instance.name}" updated successfully!')
         return super().form_valid(form)
 
     def get_success_url(self):
         return reverse('armylist_detail', kwargs={'pk': self.object.pk})
 
 
-class ArmyListDeleteView(DeleteView):
+class ArmyListDeleteView(LoginRequiredMixin, DeleteView):
     """Delete an army list"""
     model = ArmyList
     template_name = 'lists/armylist_confirm_delete.html'
     success_url = reverse_lazy('armylist_list')
+    login_url = 'account_login'
+    redirect_field_name = 'next'
+
+    def get_object(self, queryset=None):
+        """Ensure user can only delete their own lists"""
+        obj = super().get_object(queryset)
+        if obj.owner != self.request.user:
+            raise PermissionDenied(
+                "You do not have permission to delete this army list.")
+        return obj
 
     def delete(self, request, *args, **kwargs):
-        messages.success(request, f'Army list "{self.get_object().name}" deleted successfully!')
+        messages.success(
+            request, f'Army list "{self.get_object().name}" deleted successfully!')
         return super().delete(request, *args, **kwargs)
 
 
-class AddUnitToArmyListView(View):
+class AddUnitToArmyListView(LoginRequiredMixin, View):
     """Add a unit to an army list"""
+    login_url = 'account_login'
+    redirect_field_name = 'next'
 
     def post(self, request, pk):
         army_list = get_object_or_404(ArmyList, pk=pk)
+
+        # Check if user owns this list
+        if army_list.owner != request.user:
+            raise PermissionDenied(
+                "You do not have permission to modify this army list.")
+
         unit_id = request.POST.get('unit_id')
         quantity = int(request.POST.get('quantity', 5))
 
@@ -74,7 +127,8 @@ class AddUnitToArmyListView(View):
 
         # Check if unit belongs to the same faction
         if unit.faction != army_list.faction:
-            messages.error(request, f'Unit "{unit.name}" does not belong to faction "{army_list.faction.name}"!')
+            messages.error(
+                request, f'Unit "{unit.name}" does not belong to faction "{army_list.faction.name}"!')
             return redirect('armylist_detail', pk=pk)
 
         # Create or update the ListUnit
@@ -97,16 +151,26 @@ class AddUnitToArmyListView(View):
             total=Sum('subtotal_points'))['total'] or 0
         army_list.save()
 
-        messages.success(request, f'Added {quantity} x {unit.name} to {army_list.name}')
+        messages.success(
+            request, f'Added {quantity} x {unit.name} to {army_list.name}')
+        return redirect('armylist_detail', pk=pk)
         return redirect('armylist_detail', pk=pk)
 
 
-class RemoveUnitFromArmyListView(View):
+class RemoveUnitFromArmyListView(LoginRequiredMixin, View):
     """Remove a unit from an army list"""
+    login_url = 'account_login'
+    redirect_field_name = 'next'
 
     def post(self, request, pk):
         list_unit = get_object_or_404(ListUnit, pk=pk)
         army_list = list_unit.army_list
+
+        # Check if user owns this list
+        if army_list.owner != request.user:
+            raise PermissionDenied(
+                "You do not have permission to modify this army list.")
+
         unit_name = list_unit.unit.name
 
         list_unit.delete()
@@ -120,36 +184,52 @@ class RemoveUnitFromArmyListView(View):
         return redirect('armylist_detail', pk=army_list.pk)
 
 
-class UpdateListUnitView(View):
+class UpdateListUnitView(LoginRequiredMixin, View):
     """Update quantity of a unit in a list"""
+    login_url = 'account_login'
+    redirect_field_name = 'next'
 
     def post(self, request, pk):
         list_unit = get_object_or_404(ListUnit, pk=pk)
+        army_list = list_unit.army_list
+
+        # Check if user owns this list
+        if army_list.owner != request.user:
+            raise PermissionDenied(
+                "You do not have permission to modify this army list.")
+
         new_quantity = int(request.POST.get('quantity', list_unit.quantity))
 
         if new_quantity <= 0:
             messages.error(request, 'Quantity must be greater than 0!')
-            return redirect('armylist_detail', pk=list_unit.army_list.pk)
+            return redirect('armylist_detail', pk=army_list.pk)
 
         list_unit.quantity = new_quantity
         list_unit.subtotal_points = list_unit.quantity * list_unit.unit.points
         list_unit.save()
 
         # Update army list total
-        army_list = list_unit.army_list
         army_list.total_points = army_list.list_units.aggregate(
             total=Sum('subtotal_points'))['total'] or 0
         army_list.save()
 
-        messages.success(request, f'Updated {list_unit.unit.name} quantity to {new_quantity}')
+        messages.success(
+            request, f'Updated {list_unit.unit.name} quantity to {new_quantity}')
         return redirect('armylist_detail', pk=army_list.pk)
 
 
-class DuplicateArmyListView(View):
+class DuplicateArmyListView(LoginRequiredMixin, View):
     """Create a copy of an existing army list"""
+    login_url = 'account_login'
+    redirect_field_name = 'next'
 
     def post(self, request, pk):
         original_list = get_object_or_404(ArmyList, pk=pk)
+
+        # Check if user owns this list
+        if original_list.owner != request.user:
+            raise PermissionDenied(
+                "You do not have permission to duplicate this army list.")
 
         # Create a copy of the army list
         new_list = ArmyList.objects.create(
