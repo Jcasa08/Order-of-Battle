@@ -1,5 +1,8 @@
 {% load static %}
 {% url 'home' as home_url %}
+{% url 'world' as world_url %}
+{% url 'factions' as factions_url %}
+{% url 'armylist_list' as armylist_list_url %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,36 +19,45 @@
 <body>
     <header>
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary" aria-label="Main navigation">
             <div class="container-fluid">
                 <a class="navbar-brand" href="{% url 'home' %}">Order of Battle</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                            <a class="nav-link {% if request.path == home_url %}active{% endif %}" {% if request.path == home_url %}aria-current="page"{% endif %} href="{% url 'home' %}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'world' %}">World</a>
+                            <a class="nav-link {% if request.path == world_url %}active{% endif %}" {% if request.path == world_url %}aria-current="page"{% endif %} href="{% url 'world' %}">World</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'factions' %}">Factions</a>
+                            <a class="nav-link {% if request.path == factions_url %}active{% endif %}" {% if request.path == factions_url %}aria-current="page"{% endif %} href="{% url 'factions' %}">Factions</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Rules</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'armylist_list' %}">Lists</a>
+                            <a class="nav-link {% if request.path == armylist_list_url %}active{% endif %}" {% if request.path == armylist_list_url %}aria-current="page"{% endif %} href="{% url 'armylist_list' %}">Lists</a>
                         </li>
-                    </ul>                  
+                        {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+                        </li>
+                        {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+                        </li>
+                        {% endif %}
+                    </ul>
                 </div>
-                <div>
-                    <a class='btn btn-primary' href='#'>Login</a>
-                    <a class='btn btn-secondary' href='#'>Sign Up</a>
             </div>
-            </nav>
+        </nav>
         
     </header>
     <!-- Main Content -->
@@ -54,10 +66,11 @@
         {% endblock content %}
     </main>
 
-    <footer class="bg-light text-center text-lg-start mt-4">
+    <footer class="bg-light text-center text-lg-start mt-4" role="contentinfo" aria-label="Site footer">
         <div class="text-center p-3">
             © 2026 Order of Battle
         </div>
+    </footer>
 
 </body>
 </html>
