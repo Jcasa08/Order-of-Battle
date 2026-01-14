@@ -43,40 +43,33 @@
                         <strong>Owner:</strong> {{ army_list.owner.username }}
                     </p>
                     <p>
-                        <strong>Total Points:</strong> {{ army_list.total_points
-                        }}
+                        <strong>Total Points:</strong> {{ army_list.total_points }}
                     </p>
                     <p>
                         <strong>Point Limit:</strong>
-                        {% if army_list.point_limit %} {{ army_list.point_limit
-                        }} {% if army_list.total_points > army_list.point_limit
-                        %}
+                        {% if army_list.point_limit %} {{ army_list.point_limit}} 
+                        {% if army_list.total_points > army_list.point_limit %}
                         <span class="badge bg-danger">Over Limit!</span>
-                        {% elif army_list.total_points == army_list.point_limit
-                        %}
+                        {% elif army_list.total_points == army_list.point_limit %}
                         <span class="badge bg-success">At Limit</span>
                         {% else %}
                         <span class="badge bg-info"
-                            >{{
-                            army_list.point_limit|add:"-"|add:army_list.total_points
-                            }} remaining</span
-                        >
-                        {% endif %} {% else %}
+                            >{{ army_list.point_limit|add:"-"|add:army_list.total_points }} 
+                            remaining</span>
+                        {% endif %} 
                         <span class="text-muted">No limit</span>
                         {% endif %}
                     </p>
                     <p>
-                        <strong>Created:</strong> {{
-                        army_list.created_on|date:"M d, Y g:i A" }}
+                        <strong>Created:</strong> {{ army_list.created_on|date:"M d, Y g:i A" }}
                     </p>
                     <p>
-                        <strong>Last Updated:</strong> {{
-                        army_list.updated_on|date:"M d, Y g:i A" }}
+                        <strong>Last Updated:</strong>
+                        {{army_list.updated_on|date:"M d, Y g:i A" }}
                     </p>
                 </div>
             </div>
         </div>
-
         <div class="col-md-6">
             <div class="card">
                 <div class="card-body">
@@ -99,8 +92,8 @@
                                 <option value="">Choose a unit...</option>
                                 {% for unit in army_list.faction.units.all %}
                                 <option value="{{ unit.id }}">
-                                    {{ unit.name }} - {{ unit.get_role_display
-                                    }} ({{ unit.points }} pts)
+                                    {{ unit.name }} - {{ unit.get_role_display}}
+                                    ({{ unit.points }} pts)
                                 </option>
                                 {% endfor %}
                             </select>
@@ -114,7 +107,21 @@
                                 name="quantity"
                                 id="quantity"
                                 class="form-control"
-                                value="5"
+                                value="1"
+                                min="1"
+                                required
+                            />
+                        </div>
+                        <div class="mb-3">
+                            <label for="unit_size" class="form-label"
+                                >Unit Size</label
+                            >
+                            <input
+                                type="number"
+                                name="unit_size"
+                                id="unit_size"
+                                class="form-control"
+                                value="1"
                                 min="1"
                                 required
                             />
@@ -128,6 +135,8 @@
         </div>
     </div>
 
+    <script src="{% static 'js/unit_size_selector.js' %}"></script>
+
     <div class="row">
         <div class="col-12">
             <h2>Units in List</h2>
@@ -139,9 +148,9 @@
                             <th>Unit Name</th>
                             <th>Role</th>
                             <th>Points per Unit</th>
+                            <th>Unit Size</th>
                             <th>Quantity</th>
                             <th>Subtotal</th>
-                            <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
