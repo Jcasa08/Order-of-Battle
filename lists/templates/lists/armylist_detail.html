@@ -47,8 +47,8 @@
                     </p>
                     <p>
                         <strong>Point Limit:</strong>
-                        {% if army_list.point_limit %} {{ army_list.point_limit}} 
-                        {% if army_list.total_points > army_list.point_limit %}
+                        {% if army_list.point_limit %} 
+                        {{ army_list.point_limit }} {% if army_list.total_points > army_list.point_limit %}
                         <span class="badge bg-danger">Over Limit!</span>
                         {% elif army_list.total_points == army_list.point_limit %}
                         <span class="badge bg-success">At Limit</span>
@@ -56,12 +56,13 @@
                         <span class="badge bg-info"
                             >{{ army_list.point_limit|add:"-"|add:army_list.total_points }} 
                             remaining</span>
-                        {% endif %} 
+                        {% endif %} {% else %}
                         <span class="text-muted">No limit</span>
                         {% endif %}
                     </p>
                     <p>
-                        <strong>Created:</strong> {{ army_list.created_on|date:"M d, Y g:i A" }}
+                        <strong>Created:</strong> 
+                        {{army_list.created_on|date:"M d, Y g:i A" }}
                     </p>
                     <p>
                         <strong>Last Updated:</strong>
@@ -112,19 +113,19 @@
                                 required
                             />
                         </div>
+
                         <div class="mb-3">
                             <label for="unit_size" class="form-label"
                                 >Unit Size</label
                             >
-                            <input
-                                type="number"
+                            <select
                                 name="unit_size"
                                 id="unit_size"
-                                class="form-control"
-                                value="1"
-                                min="1"
+                                class="form-select"
                                 required
-                            />
+                            >
+                                <option value="">Select a unit...</option>
+                            </select>
                         </div>
                         <button type="submit" class="btn btn-primary">
                             Add Unit
