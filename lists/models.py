@@ -31,6 +31,8 @@ class ListUnit(models.Model):
         ArmyList, on_delete=models.CASCADE, related_name='list_units')
     unit = models.ForeignKey(
         Unit, on_delete=models.PROTECT, related_name='list_units')
+    unit_size = models.PositiveIntegerField(
+        default=None, null=True, blank=True)
     quantity = models.PositiveIntegerField(default=5)
     subtotal_points = models.PositiveIntegerField(default=0)
 
