@@ -155,4 +155,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')] 
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+# Message Handlers
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
+MESSAGE_STORAGE = 'django.contrib.messages.storage.fallback.FallbackStorage'

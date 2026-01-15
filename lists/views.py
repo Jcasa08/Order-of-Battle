@@ -21,6 +21,7 @@ class ArmyListListView(LoginRequiredMixin, ListView):
 
     def get_queryset(self):
         """Filter to show only the current user's army lists"""
+        print(f"DEBUG: Fetching army lists for user: {self.request.user}")
         return ArmyList.objects.filter(owner=self.request.user).order_by('-updated_on')
 
 
@@ -101,10 +102,11 @@ class ArmyListDeleteView(LoginRequiredMixin, DeleteView):
                 "You do not have permission to delete this army list.")
         return obj
 
-    def delete(self, request, *args, **kwargs):
+    def form_valid(self, form):
+        """Add success message when deletion is confirmed"""
         messages.success(
-            request, f'Army list "{self.get_object().name}" deleted successfully!')
-        return super().delete(request, *args, **kwargs)
+            self.request, f'Army list "{self.object.name}" deleted successfully!')
+        return super().form_valid(form)
 
 
 class AddUnitToArmyListView(LoginRequiredMixin, View):
