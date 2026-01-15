@@ -21,7 +21,6 @@ class ArmyListListView(LoginRequiredMixin, ListView):
 
     def get_queryset(self):
         """Filter to show only the current user's army lists"""
-        print(f"DEBUG: Fetching army lists for user: {self.request.user}")
         return ArmyList.objects.filter(owner=self.request.user).order_by('-updated_on')
 
 
