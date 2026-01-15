@@ -37,9 +37,6 @@
                             <a class="nav-link {% if request.path == factions_url %}active{% endif %}" {% if request.path == factions_url %}aria-current="page"{% endif %} href="{% url 'factions' %}">Factions</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Rules</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link {% if request.path == armylist_list_url %}active{% endif %}" {% if request.path == armylist_list_url %}aria-current="page"{% endif %} href="{% url 'armylist_list' %}">Lists</a>
                         </li>
                         {% if user.is_authenticated %}
@@ -58,7 +55,16 @@
                 </div>
             </div>
         </nav>
-        
+        {% if messages %}
+            <div class="container mt-3">
+                {% for message in messages %}
+                <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                {% endfor %}
+            </div>
+        {% endif %}
     </header>
     <!-- Main Content -->
     <main class="container mt-4">
