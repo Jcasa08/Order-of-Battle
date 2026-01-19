@@ -111,3 +111,41 @@ body {
 }
 
 /* World page styles */
+.accordion-item {
+    background-color : var(--secondary-bg-colour);
+    border: 1px solid var(--tertiary-accent);
+    margin-bottom: 10px;
+}
+
+.accordion-header {
+    background-color : var(--bg-highlight-colour);
+    color : var(--primary-text-colour);
+    font-family : var(--secondary-font);
+}
+
+.accordion-button {
+    background-color : var(--bg-highlight-colour);
+    font-size: 1.1rem;
+}
+
+.accordion-button:hover {
+    background-color : var(--tertiary-accent);
+    color : var(--primary-text-colour);
+}
+
+.accordion-button:not(.collapsed) {
+    background-color : var(--tertiary-accent);
+    color : var(--primary-text-colour);
+}
+
+.accordion-button:focus{
+    box-shadow: 0 0 0 0.25rem rgba(139, 111, 71, 0.5);
+    border-color: var(--tertiary-accent);
+}
+
+.accordion-body {
+    background-color : var(--secondary-bg-colour);
+    color : var(--primary-text-colour);
+    font-family : var(--primary-font);
+    line-height : 1.6;
+}   
