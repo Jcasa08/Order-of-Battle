@@ -157,6 +157,9 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
+# WhiteNoise configuration
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 # Message Handlers
 SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 MESSAGE_STORAGE = 'django.contrib.messages.storage.fallback.FallbackStorage'
