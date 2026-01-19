@@ -1,0 +1,18 @@
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Global Variables */
+:root {
+    --primary-font: 'Roboto', sans-serif;
+    --secondary-font: 'Cinzel', serif;
+
+}
+
+/* Global Styles */
+h1, h2, h3, h4, h5, h6{
+    font-family : var(--secondary-font);
+}
+
+body {
+    font-family : var(--primary-font);
+}
