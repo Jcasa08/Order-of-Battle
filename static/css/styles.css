@@ -12,14 +12,19 @@
     
     /* Background Colours */
 
-    --primary-bg-colour: #1a1a1a;
-    --secondary-bg-colour: #2a2a2a;
-    --bg-highlight-colour: #353535;
+    --primary-bg-colour: #1c1410;
+    --secondary-bg-colour: #2b2318;
+    --bg-highlight-colour: #3d2f23;
 
     /* Text Colours */
-    --primary-text-colour: #e0e0e0;
-    --secondary-text-colour: #a0a0a0;
-    --muted-text-colour: #707070;
+    --primary-text-colour: #d4c5b0;
+    --secondary-text-colour: #a39482;
+    --muted-text-colour: #6b5d52;
+
+    /* Accent Colors */
+    --primary-accent: #640619;
+    --secondary-accent: #a01717;
+    --tertiary-accent: #8b6f47;
 
     /* Faction Colours */
     --duchies-colour: #3b5998;
@@ -30,7 +35,7 @@
     --delete-colour: #8b1e1e;
     --edit-colour: #c9a547;
     --view-colour: #4a5568;
-
+    --valid-colour: #52754f;
 }
 
 /* Global Styles */
@@ -44,4 +49,30 @@ body {
     font-family : var(--primary-font);
     background-color : var(--primary-bg-colour);
     color : var(--primary-text-colour);
+    
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color : var(--primary-accent);
+    color : var(--primary-text-colour);
+    border : var(--secondary-accent) 1px solid;
+
+
+}
+
+.nav-item {
+    font-family : var(--secondary-font);
+    font-size : 1.2rem;
+}
+
+.nav-link {
+    color : var(--primary-text-colour);
+    text-shadow : var(--secondary-text-colour) 1px 1px 2px;
+}
+
+.navbar-img {
+    height: 60px;
+    width : auto;
+
 }
