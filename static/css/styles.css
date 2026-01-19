@@ -56,7 +56,7 @@ body {
 .navbar {
     background-color : var(--primary-accent);
     color : var(--primary-text-colour);
-    border : var(--secondary-accent) 1px solid;
+    border-bottom : var(--secondary-accent) 1px solid;
 
 
 }
@@ -71,8 +71,24 @@ body {
     text-shadow : var(--secondary-text-colour) 1px 1px 2px;
 }
 
+.nav-link:hover{
+    color : var(--secondary-text-colour);
+}
+
 .navbar-img {
     height: 60px;
     width : auto;
 
 }
+
+.footer{
+    background-color : var(--primary-accent);
+    color : var(--primary-text-colour);
+    border-top : var(--secondary-accent) 1px solid;
+    
+}
+
+
+/* Home page styles */
+
+/* World page styles */
