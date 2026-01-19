@@ -42,4 +42,6 @@ h1, h2, h3, h4, h5, h6{
 
 body {
     font-family : var(--primary-font);
+    background-color : var(--primary-bg-colour);
+    color : var(--primary-text-colour);
 }
