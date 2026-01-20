@@ -87,6 +87,12 @@ main {
 
 label {
     color: var(--primary-text-colour);
+    font-weight: 500;
+}
+
+.form-label {
+    color: var(--primary-text-colour);
+    font-weight: 500;
 }
 
 /* Navbar Styles */
@@ -113,6 +119,11 @@ label {
 .navbar-img {
     height: 60px;
     width: auto;
+}
+
+.navbar-toggler-icon{
+    color : var(--primary-text-colour);
+    border-color: var(--secondary-text-colour);
 }
 
 .footer {
@@ -149,22 +160,21 @@ body {
 }
 
 .btn-danger-custom {
-    background-color: var(--tertiary-accent);
+    background-color: var(--delete-colour);
     color: var(--primary-text-colour);
-    border: var(--secondary-accent) 2px solid;
+    border: var(--delete-colour) 2px solid;
     transition: all 0.3s ease-in-out;
 }
 
-.btn-danger-custom:hover {
-    background-color: var(--delete-colour);
+.btn-danger-custom:hover,
+.btn-danger-custom:focus {
+    background-color: #a62a2a;
     color: var(--primary-text-colour);
-    border: var(--secondary-accent) 2px solid;
+    border: #a62a2a 2px solid;
 }
 
-.btn-danger-custom:focus {
-    background-color: var(--tertiary-accent);
-    color: var(--primary-text-colour);
-    border: var(--secondary-accent) 2px solid;
+.bg-danger-custom {
+    background-color: var(--delete-colour) !important;
 }
 
 /* Home page styles */
@@ -290,20 +300,45 @@ body {
     color: white !important;
 }
 
-/* List Styles */
-.list-item {
+/* Alert Styles */
+.alert {
     background-color: var(--secondary-bg-colour);
     color: var(--primary-text-colour);
     border: 1px solid var(--tertiary-accent);
-    padding: 1rem;
-    margin-bottom: 0.5rem;
-    border-radius: 0.25rem;
-    transition: all 0.3s ease-in-out;
 }
 
-.list-item:hover {
+.alert-info {
     background-color: var(--bg-highlight-colour);
-    border-color: var(--secondary-accent);
+    border-color: var(--view-colour);
+}
+
+.alert-warning {
+    background-color: var(--bg-highlight-colour);
+    border-color: var(--edit-colour);
+}
+
+.alert-danger {
+    background-color: var(--bg-highlight-colour);
+    border-color: var(--delete-colour);
+}
+
+.alert-success {
+    background-color: var(--bg-highlight-colour);
+    border-color: var(--valid-colour);
+}
+
+.alert-heading {
+    color: var(--primary-text-colour);
+}
+
+.alert-link {
+    color: var(--secondary-accent);
+    text-decoration: none;
+}
+
+.alert-link:hover {
+    color: var(--secondary-accent);
+    text-decoration: underline;
 }
 
 /* Table Styles */
@@ -322,4 +357,29 @@ table {
 
 .table tbody tr:hover {
     background-color: var(--bg-highlight-colour);
+}
+
+/* Modal Styles */
+.modal-content {
+    background-color: var(--secondary-bg-colour);
+    border: 1px solid var(--tertiary-accent);
+    color: var(--primary-text-colour);
+}
+
+.modal-header {
+    background-color: var(--bg-highlight-colour);
+    border-bottom: 1px solid var(--tertiary-accent);
+}
+
+.modal-title {
+    color: var(--primary-text-colour);
+}
+
+.modal-body {
+    background-color: var(--secondary-bg-colour);
+}
+
+.modal-footer {
+    background-color: var(--bg-highlight-colour);
+    border-top: 1px solid var(--tertiary-accent);
 }

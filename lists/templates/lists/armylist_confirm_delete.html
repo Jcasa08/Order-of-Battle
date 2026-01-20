@@ -9,8 +9,8 @@
 
     <div class="row">
         <div class="col-md-8 offset-md-2">
-            <div class="card border-danger">
-                <div class="card-header bg-danger text-white">
+            <div class="card">
+                <div class="card-header bg-danger-custom text-white">
                     <h4 class="mb-0">Confirm Deletion</h4>
                 </div>
                 <div class="card-body">
@@ -26,24 +26,30 @@
                         <div class="card-body">
                             <h5 class="card-title">{{ object.name }}</h5>
                             <p class="card-text">
-                                <strong>Faction:</strong> {{ object.faction.name }}
-                                <br/>
-                                <strong>Owner:</strong> {{ object.owner.username }}
-                                <br/>
-                                <strong>Total Points:</strong> {{ object.total_points }}
-                                <br/>
-                                <strong>Units:</strong> {{ object.list_units.count }}
-                                <br/>
-                                <strong>Created:</strong> {{object.created_on|date:"M d, Y" }}
-                                <br/>
-                                <strong>Last Updated:</strong> {{ object.updated_on|date:"M d, Y" }}
+                                <strong>Faction:</strong> {{ object.faction.name
+                                }}
+                                <br />
+                                <strong>Owner:</strong> {{ object.owner.username
+                                }}
+                                <br />
+                                <strong>Total Points:</strong> {{
+                                object.total_points }}
+                                <br />
+                                <strong>Units:</strong> {{
+                                object.list_units.count }}
+                                <br />
+                                <strong>Created:</strong>
+                                {{object.created_on|date:"M d, Y" }}
+                                <br />
+                                <strong>Last Updated:</strong> {{
+                                object.updated_on|date:"M d, Y" }}
                             </p>
                         </div>
                     </div>
 
                     <p class="text-danger">
-                        Deleting this army list will also remove all 
-                        {{ object.list_units.count }} unit(s) associated with it.
+                        Deleting this army list will also remove all {{
+                        object.list_units.count }} unit(s) associated with it.
                     </p>
 
                     <form method="post">
@@ -51,10 +57,10 @@
                         <div class="d-flex justify-content-between">
                             <a
                                 href="{% url 'armylist_detail' object.pk %}"
-                                class="btn btn-secondary"
+                                class="btn btn-custom"
                                 >Cancel</a
                             >
-                            <button type="submit" class="btn btn-danger">
+                            <button type="submit" class="btn btn-danger-custom">
                                 Yes, Delete Army List
                             </button>
                         </div>
