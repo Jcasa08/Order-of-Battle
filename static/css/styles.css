@@ -205,3 +205,8 @@ body {
     color : black;
     border : var(--realms-colour) 2px solid;
 }
+
+.card{
+    background-color : var(--secondary-bg-colour);
+    border : var(--secondary-accent) 2px solid;
+}
