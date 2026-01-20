@@ -1,15 +1,15 @@
 /* Google Fonts Import */
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap");
 
 /* Global Variables */
 
 :root {
- /*Fonts */
- 
-    --primary-font: 'Roboto', sans-serif;
-    --secondary-font: 'Cinzel', serif;
-    
+    /*Fonts */
+
+    --primary-font: "Roboto", sans-serif;
+    --secondary-font: "Cinzel", serif;
+
     /* Background Colours */
 
     --primary-bg-colour: #1a1a1a;
@@ -39,174 +39,186 @@
 }
 
 /* Global Styles */
-h1, h2, h3, h4, h5, h6{
-    font-family : var(--secondary-font);
-    color : var(--primary-text-colour);
-    text-shadow : var(--secondary-text-colour) 1px 1px 2px;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--secondary-font);
+    color: var(--primary-text-colour);
+    text-shadow: var(--secondary-text-colour) 1px 1px 2px;
 }
 
 body {
-    font-family : var(--primary-font);
-    background-color : var(--primary-bg-colour);
-    color : var(--primary-text-colour);
-    
+    font-family: var(--primary-font);
+    background-color: var(--primary-bg-colour);
+    color: var(--primary-text-colour);
 }
 
 /* Navbar Styles */
 .navbar {
-    background-color : var(--primary-accent);
-    color : var(--primary-text-colour);
-    border-bottom : var(--secondary-accent) 1px solid;
-
-
+    background-color: var(--primary-accent);
+    color: var(--primary-text-colour);
+    border-bottom: var(--secondary-accent) 1px solid;
 }
 
 .nav-item {
-    font-family : var(--secondary-font);
-    font-size : 1.2rem;
+    font-family: var(--secondary-font);
+    font-size: 1.2rem;
 }
 
 .nav-link {
-    color : var(--primary-text-colour);
-    text-shadow : var(--secondary-text-colour) 1px 1px 2px;
+    color: var(--primary-text-colour);
+    text-shadow: var(--secondary-text-colour) 1px 1px 2px;
 }
 
-.nav-link:hover{
-    color : var(--secondary-text-colour);
+.nav-link:hover {
+    color: var(--secondary-text-colour);
 }
 
 .navbar-img {
     height: 60px;
-    width : auto;
-
+    width: auto;
 }
 
-.footer{
-    background-color : var(--primary-accent);
-    color : var(--primary-text-colour);
-    border-top : var(--secondary-accent) 1px solid;
-    
+.footer {
+    background-color: var(--primary-accent);
+    color: var(--primary-text-colour);
+    border-top: var(--secondary-accent) 1px solid;
 }
 
-.btn-custom{
-    background-color : var(--bg-highlight-colour);
-    color : var(--primary-text-colour);
-    border : var(--secondary-accent) 2px solid;
+.btn-custom {
+    background-color: var(--bg-highlight-colour);
+    color: var(--primary-text-colour);
+    border: var(--secondary-accent) 2px solid;
     transition: all 0.3s ease-in-out;
 }
 
-.btn-custom:hover{
-    background-color : var(--primary-text-colour);
-    color : var(--primary-bg-colour);
-    border : var(--secondary-accent) 2px solid;
+.btn-custom:hover {
+    background-color: var(--primary-text-colour);
+    color: var(--primary-bg-colour);
+    border: var(--secondary-accent) 2px solid;
 }
 
 /* Home page styles */
-#homeimg{
-    border-radius : 20px;
-    height : 90%;
-    width : 90%;
-    margin-left : 40px;
+#homeimg {
+    border-radius: 20px;
+    height: 90%;
+    width: 90%;
+    margin-left: 40px;
 }
-
-
 
 /* World page styles */
 .accordion-item {
-    background-color : var(--secondary-bg-colour);
+    background-color: var(--secondary-bg-colour);
     border: 1px solid var(--tertiary-accent);
     margin-bottom: 10px;
 }
 
 .accordion-header {
-    background-color : var(--bg-highlight-colour);
-    color : var(--primary-text-colour);
-    font-family : var(--secondary-font);
+    background-color: var(--bg-highlight-colour);
+    color: var(--primary-text-colour);
+    font-family: var(--secondary-font);
 }
 
 .accordion-button {
-    background-color : var(--bg-highlight-colour);
+    background-color: var(--bg-highlight-colour);
     font-size: 1.1rem;
 }
 
 .accordion-button:hover {
-    background-color : var(--tertiary-accent);
-    color : var(--primary-text-colour);
+    background-color: var(--tertiary-accent);
+    color: var(--primary-text-colour);
 }
 
 .accordion-button:not(.collapsed) {
-    background-color : var(--tertiary-accent);
-    color : var(--primary-text-colour);
+    background-color: var(--tertiary-accent);
+    color: var(--primary-text-colour);
 }
 
-.accordion-button:focus{
+.accordion-button:focus {
     box-shadow: 0 0 0 0.25rem rgba(139, 111, 71, 0.5);
     border-color: var(--tertiary-accent);
 }
 
 .accordion-body {
-    background-color : var(--secondary-bg-colour);
-    color : var(--primary-text-colour);
-    font-family : var(--primary-font);
-    line-height : 1.6;
-}   
+    background-color: var(--secondary-bg-colour);
+    color: var(--primary-text-colour);
+    font-family: var(--primary-font);
+    line-height: 1.6;
+}
 
 /* Faction Detail Page Styles */
-.btn-duchies{
+.btn-duchies {
     background-color: var(--duchies-colour);
-    color : var(--primary-text-colour);
-    border : #5073be 2px solid;
+    color: var(--primary-text-colour);
+    border: #5073be 2px solid;
 }
 
-.btn-duchies:hover{
+.btn-duchies:hover {
     background-color: #5073be;
-    color : black;
-    border : var(--duchies-colour) 2px solid;
+    color: black;
+    border: var(--duchies-colour) 2px solid;
 }
 
-.btn-duchies:focus{
+.btn-duchies:focus {
     background-color: #5073be;
-    color : black;
-    border : var(--duchies-colour) 2px solid;
+    color: black;
+    border: var(--duchies-colour) 2px solid;
 }
 
-.btn-orcs{
+.btn-orcs {
     background-color: var(--tribes-colour);
-    color : var(--primary-text-colour);
-    border : #a78bfa 2px solid;
+    color: var(--primary-text-colour);
+    border: #a78bfa 2px solid;
 }
 
-.bth-orcs:hover{
+.bth-orcs:hover {
     background-color: #a78bfa;
-    color : black;
-    border : var(--tribes-colour) 2px solid;
+    color: black;
+    border: var(--tribes-colour) 2px solid;
 }
 
-.btn-orcs:focus{
+.btn-orcs:focus {
     background-color: #a78bfa;
-    color : black;
-    border : var(--tribes-colour) 2px solid;
+    color: black;
+    border: var(--tribes-colour) 2px solid;
 }
 
-.btn-elves{
+.btn-elves {
     background-color: var(--realms-colour);
-    color : var(--primary-text-colour);
-    border : #6b7a2f 2px solid;
+    color: var(--primary-text-colour);
+    border: #6b7a2f 2px solid;
 }
 
-.btn-elves:hover{
+.btn-elves:hover {
     background-color: #6b7a2f;
-    color : black;
-    border : var(--realms-colour) 2px solid;
+    color: black;
+    border: var(--realms-colour) 2px solid;
 }
 
-.btn-elves:focus{
+.btn-elves:focus {
     background-color: #6b7a2f;
-    color : black;
-    border : var(--realms-colour) 2px solid;
+    color: black;
+    border: var(--realms-colour) 2px solid;
 }
 
-.card{
-    background-color : var(--secondary-bg-colour);
-    border : var(--secondary-accent) 2px solid;
+.card {
+    background-color: var(--secondary-bg-colour);
+    border: var(--secondary-accent) 2px solid;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.card img {
+    object-fit: cover;
+    height: 250px;
+}
+
+.card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
