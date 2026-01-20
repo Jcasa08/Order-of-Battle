@@ -149,3 +149,19 @@ body {
     font-family : var(--primary-font);
     line-height : 1.6;
 }   
+
+/* Faction Detail Page Styles */
+.btn-duchies{
+    background-color: var(--duchies-colour);
+    color : var(--primary-text-colour);
+}
+
+.btn-orcs{
+    background-color: var(--tribes-colour);
+    color : var(--primary-text-colour);
+}
+
+.btn-elves{
+    background-color: var(--realms-colour);
+    color : var(--primary-text-colour);
+}
