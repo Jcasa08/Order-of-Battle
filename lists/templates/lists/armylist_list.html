@@ -5,7 +5,7 @@
             <h1>Army Lists</h1>
             <p class="lead">Manage your army lists for battles in Ashenfell.</p>
             {% if user.is_authenticated %}
-            <a href="{% url 'armylist_create' %}" class="btn btn-primary mb-3"
+            <a href="{% url 'armylist_create' %}" class="btn btn-custom mb-3"
                 >Create New Army List</a
             >
             {% else %}
@@ -128,7 +128,7 @@
                 </ul>
             </nav>
             {% endif %} {% else %}
-            <div class="alert alert-info">
+            <div class="alert alert-custom">
                 <h4>No Army Lists Yet</h4>
                 <p>
                     You haven't created any army lists yet. Click the button

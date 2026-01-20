@@ -223,3 +223,12 @@ body {
     display: flex;
     flex-direction: column;
 }
+
+
+/* Army List Styles */
+
+.alert-custom{
+    background-color: var(--bg-highlight-colour);
+    color: var(--primary-text-colour);
+    border: var(--secondary-accent) 2px solid;
+}
