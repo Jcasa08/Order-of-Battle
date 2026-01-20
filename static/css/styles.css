@@ -125,6 +125,7 @@ body {
 .accordion-button {
     background-color: var(--bg-highlight-colour);
     font-size: 1.1rem;
+    color : var(--primary-text-colour);
 }
 
 .accordion-button:hover {
@@ -138,8 +139,7 @@ body {
 }
 
 .accordion-button:focus {
-    box-shadow: 0 0 0 0.25rem rgba(139, 111, 71, 0.5);
-    border-color: var(--tertiary-accent);
+    border: var(--bg-highlight-colour) 2px solid;
 }
 
 .accordion-body {
@@ -147,6 +147,7 @@ body {
     color: var(--primary-text-colour);
     font-family: var(--primary-font);
     line-height: 1.6;
+    border : var(--tertiary-accent) 2px solid;
 }
 
 /* Faction Detail Page Styles */
