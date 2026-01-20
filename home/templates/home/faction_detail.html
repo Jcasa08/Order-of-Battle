@@ -25,6 +25,9 @@
                 {% for unit in faction.units.all %}
                 <div class="col-md-6 mb-3">
                     <div class="card">
+                        {% if unit.image %}
+                        <img src="{{ unit.image.url }}" class="card-img-top" alt="{{ unit.name }}">
+                        {% endif %}
                         <div class="card-body">
                             <h5 class="card-title">{{ unit.name }}</h5>
                             <p class="card-text">
