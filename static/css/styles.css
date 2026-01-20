@@ -12,9 +12,9 @@
     
     /* Background Colours */
 
-    --primary-bg-colour: #1c1410;
-    --secondary-bg-colour: #2b2318;
-    --bg-highlight-colour: #3d2f23;
+    --primary-bg-colour: #1a1a1a;
+    --secondary-bg-colour: #2a2a2a;
+    --bg-highlight-colour: #353535;
 
     /* Text Colours */
     --primary-text-colour: #d4c5b0;
@@ -23,8 +23,8 @@
 
     /* Accent Colors */
     --primary-accent: #640619;
-    --secondary-accent: #a01717;
-    --tertiary-accent: #8b6f47;
+    --secondary-accent: #c9a547;
+    --tertiary-accent: #4a5568;
 
     /* Faction Colours */
     --duchies-colour: #3b5998;
@@ -88,6 +88,18 @@ body {
     
 }
 
+.btn-custom{
+    background-color : var(--bg-highlight-colour);
+    color : var(--primary-text-colour);
+    border : var(--secondary-accent) 2px solid;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-custom:hover{
+    background-color : var(--primary-text-colour);
+    color : var(--primary-bg-colour);
+    border : var(--secondary-accent) 2px solid;
+}
 
 /* Home page styles */
 #homeimg{
@@ -97,18 +109,7 @@ body {
     margin-left : 40px;
 }
 
-.btn-homepg{
-    background-color : var(--bg-highlight-colour);
-    color : var(--primary-text-colour);
-    border : var(--secondary-accent) 2px solid;
-    transition: all 0.3s ease-in-out;
-}
 
-.btn-homepg:hover{
-    background-color : var(--primary-text-colour);
-    color : var(--primary-bg-colour);
-    border : var(--secondary-accent) 2px solid;
-}
 
 /* World page styles */
 .accordion-item {
@@ -154,14 +155,53 @@ body {
 .btn-duchies{
     background-color: var(--duchies-colour);
     color : var(--primary-text-colour);
+    border : #5073be 2px solid;
+}
+
+.btn-duchies:hover{
+    background-color: #5073be;
+    color : black;
+    border : var(--duchies-colour) 2px solid;
+}
+
+.btn-duchies:focus{
+    background-color: #5073be;
+    color : black;
+    border : var(--duchies-colour) 2px solid;
 }
 
 .btn-orcs{
     background-color: var(--tribes-colour);
     color : var(--primary-text-colour);
+    border : #a78bfa 2px solid;
+}
+
+.bth-orcs:hover{
+    background-color: #a78bfa;
+    color : black;
+    border : var(--tribes-colour) 2px solid;
+}
+
+.btn-orcs:focus{
+    background-color: #a78bfa;
+    color : black;
+    border : var(--tribes-colour) 2px solid;
 }
 
 .btn-elves{
     background-color: var(--realms-colour);
     color : var(--primary-text-colour);
+    border : #6b7a2f 2px solid;
+}
+
+.btn-elves:hover{
+    background-color: #6b7a2f;
+    color : black;
+    border : var(--realms-colour) 2px solid;
+}
+
+.btn-elves:focus{
+    background-color: #6b7a2f;
+    color : black;
+    border : var(--realms-colour) 2px solid;
 }
