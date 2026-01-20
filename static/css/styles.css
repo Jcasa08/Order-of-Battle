@@ -50,9 +50,42 @@ h6 {
     text-shadow: var(--secondary-text-colour) 1px 1px 2px;
 }
 
+/* Heading Utilities */
+.heading-custom {
+    font-family: var(--secondary-font);
+    color: var(--primary-text-colour);
+    text-shadow: var(--secondary-text-colour) 1px 1px 2px;
+}
+
 body {
     font-family: var(--primary-font);
     background-color: var(--primary-bg-colour);
+    color: var(--primary-text-colour);
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+/* Form Styles */
+.form-control,
+.form-select {
+    background-color: var(--secondary-bg-colour);
+    color: var(--primary-text-colour);
+    border: 1px solid var(--tertiary-accent);
+}
+
+.form-control:focus,
+.form-select:focus {
+    background-color: var(--secondary-bg-colour);
+    color: var(--primary-text-colour);
+    border-color: var(--secondary-accent);
+    box-shadow: 0 0 0 0.2rem rgba(201, 165, 71, 0.25);
+}
+
+label {
     color: var(--primary-text-colour);
 }
 
@@ -86,8 +119,16 @@ body {
     background-color: var(--primary-accent);
     color: var(--primary-text-colour);
     border-top: var(--secondary-accent) 1px solid;
+    flex-shrink: 0;
 }
 
+/* Sticky footer */
+html,
+body {
+    height: 100%;
+}
+
+/* Button Styles */
 .btn-custom {
     background-color: var(--tertiary-accent);
     color: var(--primary-text-colour);
@@ -107,7 +148,7 @@ body {
     border: var(--secondary-accent) 2px solid;
 }
 
-.btn-danger-custom{
+.btn-danger-custom {
     background-color: var(--tertiary-accent);
     color: var(--primary-text-colour);
     border: var(--secondary-accent) 2px solid;
@@ -150,7 +191,7 @@ body {
 .accordion-button {
     background-color: var(--bg-highlight-colour);
     font-size: 1.1rem;
-    color : var(--primary-text-colour);
+    color: var(--primary-text-colour);
 }
 
 .accordion-button:hover {
@@ -172,62 +213,50 @@ body {
     color: var(--primary-text-colour);
     font-family: var(--primary-font);
     line-height: 1.6;
-    border : var(--tertiary-accent) 2px solid;
+    border: var(--tertiary-accent) 2px solid;
 }
 
-/* Faction Detail Page Styles */
+/* Faction Button Styles */
 .btn-duchies {
     background-color: var(--duchies-colour);
     color: var(--primary-text-colour);
-    border: #5073be 2px solid;
-}
-
-.btn-duchies:hover {
-    background-color: #5073be;
-    color: black;
     border: var(--duchies-colour) 2px solid;
+    transition: all 0.3s ease-in-out;
 }
 
+.btn-duchies:hover,
 .btn-duchies:focus {
     background-color: #5073be;
-    color: black;
-    border: var(--duchies-colour) 2px solid;
+    color: var(--primary-text-colour);
+    border: #5073be 2px solid;
 }
 
 .btn-orcs {
     background-color: var(--tribes-colour);
     color: var(--primary-text-colour);
-    border: #a78bfa 2px solid;
-}
-
-.bth-orcs:hover {
-    background-color: #a78bfa;
-    color: black;
     border: var(--tribes-colour) 2px solid;
+    transition: all 0.3s ease-in-out;
 }
 
+.btn-orcs:hover,
 .btn-orcs:focus {
     background-color: #a78bfa;
-    color: black;
-    border: var(--tribes-colour) 2px solid;
+    color: var(--primary-text-colour);
+    border: #a78bfa 2px solid;
 }
 
 .btn-elves {
     background-color: var(--realms-colour);
     color: var(--primary-text-colour);
-    border: #6b7a2f 2px solid;
-}
-
-.btn-elves:hover {
-    background-color: #6b7a2f;
-    color: black;
     border: var(--realms-colour) 2px solid;
+    transition: all 0.3s ease-in-out;
 }
 
+.btn-elves:hover,
 .btn-elves:focus {
     background-color: #6b7a2f;
-    color: black;
-    border: var(--realms-colour) 2px solid;
+    color: var(--primary-text-colour);
+    border: #6b7a2f 2px solid;
 }
 
 .card {
@@ -249,16 +278,48 @@ body {
     flex-direction: column;
 }
 
-
 /* Army List Styles */
 
-.alert-custom{
+.alert-custom {
     background-color: var(--bg-highlight-colour);
     color: var(--primary-text-colour);
     border: var(--secondary-accent) 2px solid;
 }
 
-.form-text-custom{
+.form-text-custom {
     color: white !important;
-    
+}
+
+/* List Styles */
+.list-item {
+    background-color: var(--secondary-bg-colour);
+    color: var(--primary-text-colour);
+    border: 1px solid var(--tertiary-accent);
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0.25rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.list-item:hover {
+    background-color: var(--bg-highlight-colour);
+    border-color: var(--secondary-accent);
+}
+
+/* Table Styles */
+table {
+    color: var(--primary-text-colour);
+}
+
+.table thead {
+    background-color: var(--bg-highlight-colour);
+    border-color: var(--tertiary-accent);
+}
+
+.table tbody tr {
+    border-color: var(--tertiary-accent);
+}
+
+.table tbody tr:hover {
+    background-color: var(--bg-highlight-colour);
 }

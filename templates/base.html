@@ -1,92 +1,176 @@
-{% load static %}
-{% url 'home' as home_url %}
-{% url 'world' as world_url %}
-{% url 'factions' as factions_url %}
-{% url 'armylist_list' as armylist_list_url %}
+{% load static %} {% url 'home' as home_url %} {% url 'world' as world_url %} 
+{% url 'factions' as factions_url %} {% url 'armylist_list' as armylist_list_url %}
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% load bootstrap5 %}
-    {% bootstrap_css %}
-    {% bootstrap_javascript %}
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-    <link rel="icon" type="image/png" href="{% static 'images/favicon.ico' %}">
-    <title>Order of Battle</title>
-</head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        {% load bootstrap5 %} {% bootstrap_css %} {% bootstrap_javascript %}
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+        <link
+            rel="icon"
+            type="image/png"
+            href="{% static 'images/favicon.ico' %}"
+        />
+        <title>Order of Battle</title>
+    </head>
 
-
-<body>
-    <header>
-        <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg bg-body-tertiary" aria-label="Main navigation">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="{% url 'home' %}"><img class = 'navbar-img' src="{% static 'images/logo.png' %}" alt="Order of Battle Logo"></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link {% if request.path == home_url %}active{% endif %}" {% if request.path == home_url %}aria-current="page"{% endif %} href="{% url 'home' %}">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link {% if request.path == world_url %}active{% endif %}" {% if request.path == world_url %}aria-current="page"{% endif %} href="{% url 'world' %}">World</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link {% if request.path == factions_url %}active{% endif %}" {% if request.path == factions_url %}aria-current="page"{% endif %} href="{% url 'factions' %}">Factions</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link {% if request.path == armylist_list_url %}active{% endif %}" {% if request.path == armylist_list_url %}aria-current="page"{% endif %} href="{% url 'armylist_list' %}">Lists</a>
-                        </li>
-                        {% if user.is_authenticated %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
-                        </li>
-                        {% else %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'account_login' %}">Login</a>
-                        </li>
-                        {% endif %}
-                    </ul>
-                    <div>
-                        {% if user.is_authenticated %}
+    <body>
+        <header>
+            <!-- Navbar -->
+            <nav
+                class="navbar navbar-expand-lg bg-body-tertiary"
+                aria-label="Main navigation"
+            >
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="{% url 'home' %}"
+                        ><img
+                            class="navbar-img"
+                            src="{% static 'images/logo.png' %}"
+                            alt="Order of Battle Logo"
+                    /></a>
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div
+                        class="collapse navbar-collapse"
+                        id="navbarSupportedContent"
+                    >
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link {% if request.path == home_url %}active{% endif %}"
+                                    {%
+                                    if
+                                    request.path=""
+                                    ="home_url"
+                                    %}aria-current="page"
+                                    {%
+                                    endif
+                                    %}
+                                    href="{% url 'home' %}"
+                                    >Home</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link {% if request.path == world_url %}active{% endif %}"
+                                    {%
+                                    if
+                                    request.path=""
+                                    ="world_url"
+                                    %}aria-current="page"
+                                    {%
+                                    endif
+                                    %}
+                                    href="{% url 'world' %}"
+                                    >World</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link {% if request.path == factions_url %}active{% endif %}"
+                                    {%
+                                    if
+                                    request.path=""
+                                    ="factions_url"
+                                    %}aria-current="page"
+                                    {%
+                                    endif
+                                    %}
+                                    href="{% url 'factions' %}"
+                                    >Factions</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link {% if request.path == armylist_list_url %}active{% endif %}"
+                                    {%
+                                    if
+                                    request.path=""
+                                    ="armylist_list_url"
+                                    %}aria-current="page"
+                                    {%
+                                    endif
+                                    %}
+                                    href="{% url 'armylist_list' %}"
+                                    >Lists</a
+                                >
+                            </li>
+                            {% if user.is_authenticated %}
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link"
+                                    href="{% url 'account_logout' %}"
+                                    >Logout</a
+                                >
+                            </li>
+                            {% else %}
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link"
+                                    href="{% url 'account_signup' %}"
+                                    >Register</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link"
+                                    href="{% url 'account_login' %}"
+                                    >Login</a
+                                >
+                            </li>
+                            {% endif %}
+                        </ul>
+                        <div>
+                            {% if user.is_authenticated %}
                             <span class="navbar-text">
                                 Logged in as {{ user.username }}
                             </span>
-                        {% endif %}
+                            {% endif %}
+                        </div>
                     </div>
                 </div>
-            </div>
-        </nav>
-        {% if messages %}
+            </nav>
+            {% if messages %}
             <div class="container mt-3">
                 {% for message in messages %}
-                <div class="alert alert-{{ message.level_tag }} alert-dismissible fade show" role="alert">
+                <div
+                    class="alert alert-{{ message.level_tag }} alert-dismissible fade show"
+                    role="alert"
+                >
                     {{ message }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="alert"
+                        aria-label="Close"
+                    ></button>
                 </div>
                 {% endfor %}
             </div>
-        {% endif %}
+            {% endif %}
+        </header>
+        <!-- Main Content -->
+        <main class="container mt-4 mb-4">
+            {% block content %} {% endblock content %}
+        </main>
 
-    </header>
-    <!-- Main Content -->
-    <main class="container mt-4">
-        {% block content %}
-        {% endblock content %}
-    </main>
-
-    <footer class="footer text-center text-lg-start mt-4" role="contentinfo" aria-label="Site footer">
-        <div class="text-center p-3">
-            © 2026 Order of Battle
-        </div>
-    </footer>
-
-</body>
+        <footer
+            class="footer text-center text-lg-start mt-4"
+            role="contentinfo"
+            aria-label="Site footer"
+        >
+            <div class="text-center p-3">© 2026 Order of Battle</div>
+        </footer>
+    </body>
 </html>
