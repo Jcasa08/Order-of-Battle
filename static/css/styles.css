@@ -89,15 +89,40 @@ body {
 }
 
 .btn-custom {
-    background-color: var(--bg-highlight-colour);
+    background-color: var(--tertiary-accent);
     color: var(--primary-text-colour);
     border: var(--secondary-accent) 2px solid;
     transition: all 0.3s ease-in-out;
 }
 
 .btn-custom:hover {
-    background-color: var(--primary-text-colour);
-    color: var(--primary-bg-colour);
+    background-color: var(--valid-colour);
+    color: var(--primary-text-colour);
+    border: var(--secondary-accent) 2px solid;
+}
+
+.btn-custom:focus {
+    background-color: var(--tertiary-accent);
+    color: var(--primary-text-colour);
+    border: var(--secondary-accent) 2px solid;
+}
+
+.btn-danger-custom{
+    background-color: var(--tertiary-accent);
+    color: var(--primary-text-colour);
+    border: var(--secondary-accent) 2px solid;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-danger-custom:hover {
+    background-color: var(--delete-colour);
+    color: var(--primary-text-colour);
+    border: var(--secondary-accent) 2px solid;
+}
+
+.btn-danger-custom:focus {
+    background-color: var(--tertiary-accent);
+    color: var(--primary-text-colour);
     border: var(--secondary-accent) 2px solid;
 }
 
@@ -231,4 +256,9 @@ body {
     background-color: var(--bg-highlight-colour);
     color: var(--primary-text-colour);
     border: var(--secondary-accent) 2px solid;
+}
+
+.form-text-custom{
+    color: white !important;
+    
 }

@@ -27,7 +27,7 @@
                                 {{ form.name.errors }}
                             </div>
                             {% endif %}
-                            <div class="form-text">
+                            <div class="form-text form-text-custom">
                                 Give your army list a unique name
                             </div>
                         </div>
@@ -43,7 +43,7 @@
                                 {{ form.faction.errors }}
                             </div>
                             {% endif %}
-                            <div class="form-text">
+                            <div class="form-text form-text-custom">
                                 Select which faction this army list belongs to
                             </div>
                         </div>
@@ -59,7 +59,7 @@
                                 {{ form.point_limit.errors }}
                             </div>
                             {% endif %}
-                            <div class="form-text">
+                            <div class="form-text form-text-custom">
                                 Optional: Set a maximum point limit for this
                                 list
                             </div>
@@ -68,10 +68,10 @@
                         <div class="d-flex justify-content-between">
                             <a
                                 href="{% url 'armylist_list' %}"
-                                class="btn btn-secondary"
+                                class="btn btn-danger-custom"
                                 >Cancel</a
                             >
-                            <button type="submit" class="btn btn-primary">
+                            <button type="submit" class="btn btn-custom">
                                 {% if army_list.pk %}Update{% else %}Create Army List
                             </button>
                         </div>
