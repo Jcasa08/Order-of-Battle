@@ -7,7 +7,7 @@
                 <div>
                     <a
                         href="{% url 'armylist_update' army_list.pk %}"
-                        class="btn btn-custom"
+                        class="btn btn-edit"
                         >Edit List</a
                     >
                     <button
@@ -79,7 +79,7 @@
                         style="display: inline"
                     >
                         {% csrf_token %}
-                        <button type="submit" class="btn btn-secondary">
+                        <button type="submit" class="btn btn-custom">
                             Duplicate
                         </button>
                     </form>
@@ -114,7 +114,7 @@
                             Under Limit</span>
                         {% endif %} 
                         {% else %}
-                        <span class="text-muted">No limit</span>
+                        <span>No limit</span>
                         {% endif %}
                     </p>
                     <p>
@@ -190,7 +190,7 @@
                                 <span id="subtotal_preview"></span>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary">
+                        <button type="submit" class="btn btn-custom">
                             Add Unit
                         </button>
                     </form>
@@ -206,7 +206,7 @@
             <h2>Units in List</h2>
             {% if army_list.list_units.all %}
             <div class="table-responsive">
-                <table class="table table-striped">
+                <table class="table table-detail">
                     <thead>
                         <tr>
                             <th>Unit Name</th>
@@ -252,7 +252,7 @@
                                     {% csrf_token %}
                                     <button
                                         type="submit"
-                                        class="btn btn-sm btn-danger"
+                                        class="btn btn-sm btn-danger-custom"
                                         onclick="return confirm('Remove this unit from the list?')"
                                     >
                                         Remove
@@ -261,7 +261,7 @@
                             </td>
                         </tr>
                         {% endfor %}
-                        <tr class="table-info">
+                        <tr class="table-info-custom">
                             <td colspan="4" class="text-end">
                                 <strong>Total:</strong>
                             </td>
@@ -275,7 +275,7 @@
                 </table>
             </div>
             {% else %}
-            <div class="alert alert-info">
+            <div class="alert alert-info-custom">
                 <p>
                     No units in this army list yet. Use the form above to add
                     units!

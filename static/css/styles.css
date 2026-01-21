@@ -367,6 +367,23 @@ body {
     color: var(--primary-text-colour) !important;
 }
 
+.table-detail{
+    color: var(--primary-text-colour);
+    background-color: var(--secondary-bg-colour);
+}
+
+.table-detail th {
+    background-color: var(--bg-highlight-colour);
+    border: 1px solid var(--tertiary-accent);
+    color: var(--primary-text-colour);
+}
+
+.table-info-custom {
+    background-color: var(--tertiary-accent);
+    color: var(--primary-text-colour);
+    font-weight: bold;
+}
+
 /* Modal Styles */
 .modal-content {
     background-color: var(--secondary-bg-colour);
