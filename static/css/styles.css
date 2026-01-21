@@ -322,7 +322,7 @@ body {
 }
 
 .alert-warning {
-    background-color: var(--bg-highlight-colour);
+    background-color: var(--delete-colour);
     border-color: var(--edit-colour);
 }
 
