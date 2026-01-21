@@ -1,4 +1,5 @@
 from django.db import models
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 
@@ -32,7 +33,7 @@ class Unit(models.Model):
     points = models.PositiveIntegerField()
     min_size = models.PositiveIntegerField(default=5)
     max_size = models.PositiveIntegerField(default=20)
-    image = models.ImageField(upload_to='unit_images/', blank=True, null=True)
+    image = CloudinaryField('image', blank=True, null=True)
 
     class Meta:
         ordering = ['faction', 'name', 'role']
