@@ -51,6 +51,11 @@ h6 {
     text-shadow: var(--secondary-text-colour) 1px 1px 2px;
 }
 
+p > a {
+    color: var(--secondary-accent);
+    text-decoration: underline;
+}
+
 /* Heading Utilities */
 .heading-custom {
     font-family: var(--secondary-font);
@@ -253,8 +258,8 @@ body {
 .btn-orcs {
     background-color: var(--tribes-colour);
     color: var(--primary-text-colour);
-    border:#552ad3; 2px solid;
-    transition: all 0.3s ease-in-out;
+    border:#552ad3 2px solid;
+    transition : all 0.3s ease-in-out;
 }
 
 .btn-orcs:hover,
@@ -317,23 +322,23 @@ body {
 }
 
 .alert-info {
-    background-color: var(--bg-highlight-colour);
-    border-color: var(--view-colour);
+    background-color: var(--view-colour);
+    border-color: var(--primary-text-colour);
 }
 
 .alert-warning {
     background-color: var(--delete-colour);
-    border-color: var(--edit-colour);
+    border-color: var(--primary-text-colour);
 }
 
 .alert-danger {
-    background-color: var(--bg-highlight-colour);
-    border-color: var(--delete-colour);
+    background-color: var(--delete-colour);
+    border-color: var(--primary-text-colour);
 }
 
 .alert-success {
-    background-color: var(--bg-highlight-colour);
-    border-color: var(--valid-colour);
+    background-color: var(--valid-colour);
+    border-color: var(--primary-text-colour);
 }
 
 .alert-heading {
