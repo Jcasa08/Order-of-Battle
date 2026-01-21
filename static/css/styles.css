@@ -31,11 +31,12 @@
     --tribes-colour: #8b5cf6;
     --realms-colour: #4a5d23;
 
-    /*Status Colours */
+    /* Button Colours */
     --delete-colour: #8b1e1e;
-    --edit-colour: #c9a547;
+    --edit-colour: #5e4402;
     --view-colour: #4a5568;
     --valid-colour: #52754f;
+    --btn-colour: #818181;
 }
 
 /* Global Styles */
@@ -141,23 +142,16 @@ body {
 
 /* Button Styles */
 .btn-custom {
-    background-color: var(--tertiary-accent);
-    color: var(--primary-text-colour);
-    border: var(--secondary-accent) 2px solid;
-    transition: all 0.3s ease-in-out;
+    background-color: var(--btn-colour);
+    color: black
 }
 
-.btn-custom:hover {
-    background-color: var(--valid-colour);
+.btn-custom:hover, .btn-custom:focus {
+    background-color: var(--bg-highlight-colour);
     color: var(--primary-text-colour);
-    border: var(--secondary-accent) 2px solid;
+    border: var(--primary-text-colour) 2px solid;
 }
 
-.btn-custom:focus {
-    background-color: var(--tertiary-accent);
-    color: var(--primary-text-colour);
-    border: var(--secondary-accent) 2px solid;
-}
 
 .btn-danger-custom {
     background-color: var(--delete-colour);
@@ -170,12 +164,27 @@ body {
 .btn-danger-custom:focus {
     background-color: #a62a2a;
     color: var(--primary-text-colour);
-    border: #a62a2a 2px solid;
+    border: var(--primary-text-colour) 2px solid;
+}
+
+.btn-edit{
+    background-color: var(--edit-colour);
+    color: var(--primary-text-colour);
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-edit:hover,
+.btn-edit:focus {
+    background-color: #7e5c04;
+    color: var(--primary-text-colour);
+    border: var(--primary-text-colour) 2px solid;
 }
 
 .bg-danger-custom {
     background-color: var(--delete-colour) !important;
 }
+
+
 
 /* Home page styles */
 #homeimg {
@@ -230,7 +239,7 @@ body {
 .btn-duchies {
     background-color: var(--duchies-colour);
     color: var(--primary-text-colour);
-    border: var(--duchies-colour) 2px solid;
+    border: #5073be 2px solid;
     transition: all 0.3s ease-in-out;
 }
 
@@ -238,27 +247,27 @@ body {
 .btn-duchies:focus {
     background-color: #5073be;
     color: var(--primary-text-colour);
-    border: #5073be 2px solid;
+    border: var(--duchies-colour) 2px solid;
 }
 
 .btn-orcs {
     background-color: var(--tribes-colour);
     color: var(--primary-text-colour);
-    border: var(--tribes-colour) 2px solid;
+    border:#552ad3; 2px solid;
     transition: all 0.3s ease-in-out;
 }
 
 .btn-orcs:hover,
 .btn-orcs:focus {
-    background-color: #a78bfa;
+    background-color: #552ad3;
     color: var(--primary-text-colour);
-    border: #a78bfa 2px solid;
+    border: var(--tribes-colour) 2px solid;
 }
 
 .btn-elves {
     background-color: var(--realms-colour);
     color: var(--primary-text-colour);
-    border: var(--realms-colour) 2px solid;
+    border: #6b7a2f 2px solid;
     transition: all 0.3s ease-in-out;
 }
 
@@ -266,7 +275,7 @@ body {
 .btn-elves:focus {
     background-color: #6b7a2f;
     color: var(--primary-text-colour);
-    border: #6b7a2f 2px solid;
+    border: var(--realms-colour) 2px solid;
 }
 
 .card {
