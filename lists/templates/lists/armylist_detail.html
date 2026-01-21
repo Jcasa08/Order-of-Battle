@@ -2,9 +2,11 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <div class="d-flex justify-content-between align-items-center">
+            <div
+                class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-3"
+            >
                 <h1>{{ army_list.name }}</h1>
-                <div>
+                <div class="mt-3 mt-md-0 d-flex flex-wrap gap-2">
                     <a
                         href="{% url 'armylist_update' army_list.pk %}"
                         class="btn btn-edit"
@@ -28,7 +30,13 @@
                     >
                         <div class="modal-dialog">
                             <div class="modal-content">
-                                <div class=\"modal-header bg-danger text-white\">\n                                    <h5\n                                        class=\"modal-title\"\n                                        id=\"deleteModalLabel\"\n                                    >\n                                        Delete Army List\n                                    </h5>
+                                <div class="modal-header bg-danger text-white">
+                                    <h5
+                                        class="modal-title"
+                                        id="deleteModalLabel"
+                                    >
+                                        Delete Army List
+                                    </h5>
                                     <button
                                         type="button"
                                         class="btn-close btn-close-white"
@@ -64,7 +72,11 @@
                                     <button
                                         type="button"
                                         class="btn btn-danger-custom"
-                                        onclick="document.getElementById('deleteForm').submit();"
+                                        onclick="
+                                            document
+                                                .getElementById('deleteForm')
+                                                .submit()
+                                        "
                                     >
                                         Delete List
                                     </button>
@@ -103,15 +115,15 @@
                     </p>
                     <p>
                         <strong>Point Limit:</strong>
-                        {% if army_list.point_limit %} {{ army_list.point_limit }} 
+                        {% if army_list.point_limit %} 
+                        {{ army_list.point_limit }} 
                         {% if army_list.total_points > army_list.point_limit %}
                         <span class="badge bg-danger">Over Limit!</span>
                         {% elif army_list.total_points == army_list.point_limit %}
                         <span class="badge bg-success">At Limit</span>
                         {% else %}
                         <span class="badge bg-info">
-                            {{ army_list.point_limit|add:"-"|add:army_list.total_points }} 
-                            Under Limit</span>
+                            {{ army_list.point_limit|add:"-"|add:army_list.total_points }} Under Limit</span>
                         {% endif %} 
                         {% else %}
                         <span>No limit</span>
@@ -183,7 +195,7 @@
                             >
                                 <option value="">Select a unit...</option>
                             </select>
-                            <div class="form-text mt-1">
+                            <div class="form-text-custom mt-1">
                                 <span>Points per unit: </span>
                                 <span id="points_per_unit_preview"></span>
                                 <span class="ms-3">Subtotal: </span>
@@ -220,11 +232,19 @@
                     <tbody>
                         {% for list_unit in army_list.list_units.all %}
                         <tr>
-                            <td>{{ list_unit.unit.name }}</td>
-                            <td>{{ list_unit.unit.get_role_display }}</td>
-                            <td>{{ list_unit.scaled_points }}</td>
-                            <td>{{ list_unit.unit_size }}</td>
-                            <td>
+                            <td data-label="Unit Name">
+                                {{ list_unit.unit.name }}
+                            </td>
+                            <td data-label="Role">
+                                {{ list_unit.unit.get_role_display }}
+                            </td>
+                            <td data-label="Points per Unit">
+                                {{ list_unit.scaled_points }}
+                            </td>
+                            <td data-label="Unit Size">
+                                {{ list_unit.unit_size }}
+                            </td>
+                            <td data-label="Quantity">
                                 <form
                                     method="post"
                                     action="{% url 'update_list_unit' list_unit.pk %}"
@@ -242,8 +262,10 @@
                                     />
                                 </form>
                             </td>
-                            <td>{{ list_unit.subtotal_points }}</td>
-                            <td>
+                            <td data-label="Subtotal">
+                                {{ list_unit.subtotal_points }}
+                            </td>
+                            <td data-label="Actions">
                                 <form
                                     method="post"
                                     action="{% url 'remove_unit_from_list' list_unit.pk %}"
@@ -253,7 +275,11 @@
                                     <button
                                         type="submit"
                                         class="btn btn-sm btn-danger-custom"
-                                        onclick="return confirm('Remove this unit from the list?')"
+                                        onclick="
+                                            return confirm(
+                                                'Remove this unit from the list?',
+                                            );
+                                        "
                                     >
                                         Remove
                                     </button>

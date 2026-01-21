@@ -157,15 +157,15 @@ body {
 /* Button Styles */
 .btn-custom {
     background-color: var(--btn-colour);
-    color: black
+    color: black;
 }
 
-.btn-custom:hover, .btn-custom:focus {
+.btn-custom:hover,
+.btn-custom:focus {
     background-color: var(--bg-highlight-colour);
     color: var(--primary-text-colour);
     border: var(--primary-text-colour) 2px solid;
 }
-
 
 .btn-danger-custom {
     background-color: var(--delete-colour);
@@ -181,7 +181,7 @@ body {
     border: var(--primary-text-colour) 2px solid;
 }
 
-.btn-edit{
+.btn-edit {
     background-color: var(--edit-colour);
     color: var(--primary-text-colour);
     transition: all 0.3s ease-in-out;
@@ -198,14 +198,12 @@ body {
     background-color: var(--delete-colour) !important;
 }
 
-
-
 /* Home page styles */
 #homeimg {
     border-radius: 20px;
     height: 90%;
     width: 90%;
-    margin-left: 40px;
+    margin-left: 60px;
 }
 
 /* World page styles */
@@ -267,8 +265,8 @@ body {
 .btn-orcs {
     background-color: var(--tribes-colour);
     color: var(--primary-text-colour);
-    border:#552ad3 2px solid;
-    transition : all 0.3s ease-in-out;
+    border: #552ad3 2px solid;
+    transition: all 0.3s ease-in-out;
 }
 
 .btn-orcs:hover,
@@ -376,12 +374,12 @@ body {
     color: var(--primary-text-colour);
 }
 
- .table-custom tr:hover{
+.table-custom tr:hover {
     background-color: var(--tertiary-accent);
     color: var(--primary-text-colour) !important;
 }
 
-.table-detail{
+.table-detail {
     color: var(--primary-text-colour);
     background-color: var(--secondary-bg-colour);
 }
@@ -423,7 +421,6 @@ body {
     border-top: 1px solid var(--tertiary-accent);
 }
 
-
 /* Link  Styles */
 .link-custom {
     color: var(--secondary-accent);
@@ -433,4 +430,161 @@ body {
 .link-custom:hover {
     color: var(--secondary-accent);
     text-decoration: underline;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    /* Adjust font sizes for mobile */
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.25rem;
+    }
+
+    /* Fix navbar items */
+    .nav-item {
+        font-size: 1rem;
+    }
+
+    /* Reduce navbar logo size */
+    .navbar-img {
+        height: 45px;
+    }
+
+    /* Fix home image on mobile */
+    #homeimg {
+        margin-left: 10px;
+        width: 100%;
+        height: auto;
+    }
+
+    /* Improve card image sizing */
+    .card img {
+        height: 200px;
+    }
+
+    /* Stack buttons vertically on mobile */
+    .btn {
+        margin-bottom: 0.5rem;
+    }
+
+    /* Exception for inline buttons */
+    .d-inline .btn,
+    .modal-footer .btn,
+    .gap-2 .btn {
+        margin-bottom: 0;
+    }
+
+    /* Better spacing on mobile */
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    /* Responsive tables - card layout on mobile */
+    .table-custom thead,
+    .table-detail thead {
+        display: none;
+    }
+
+    .table-custom tbody,
+    .table-detail tbody {
+        display: block;
+    }
+
+    .table-custom tr,
+    .table-detail tr {
+        display: block;
+        margin-bottom: 1rem;
+        border: 1px solid var(--tertiary-accent);
+        border-radius: 4px;
+        padding: 0.75rem;
+        background-color: var(--secondary-bg-colour);
+    }
+
+    .table-custom td,
+    .table-detail td {
+        display: block;
+        text-align: right;
+        padding: 0.5rem 0;
+        border: none;
+        white-space: normal;
+    }
+
+    .table-custom td::before,
+    .table-detail td::before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        color: var(--secondary-accent);
+    }
+
+    /* Keep action buttons inline */
+    .table-custom td:last-child,
+    .table-detail td:last-child {
+        text-align: center;
+        padding-top: 1rem;
+        border-top: 1px solid var(--tertiary-accent);
+        margin-top: 0.5rem;
+    }
+
+    .table-custom td:last-child .btn,
+    .table-detail td:last-child .btn {
+        margin: 0.25rem;
+    }
+
+    /* Better modal sizing */
+    .modal-dialog {
+        margin: 0.5rem;
+    }
+
+    /* Improve form spacing */
+    .form-control,
+    .form-select {
+        font-size: 1rem;
+    }
+
+    /* Better alert sizing */
+    .alert {
+        font-size: 0.875rem;
+        padding: 0.75rem;
+    }
+}
+
+@media (max-width: 576px) {
+    /* Extra small devices */
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+
+    /* Smaller card images on very small screens */
+    .card img {
+        height: 150px;
+    }
+
+    /* Reduce button padding */
+    .btn {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.875rem;
+    }
+
+    /* Stack action buttons better */
+    .d-flex.justify-content-between {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .d-flex.justify-content-between > div {
+        width: 100%;
+    }
 }

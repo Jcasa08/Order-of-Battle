@@ -47,23 +47,30 @@
                     <tbody>
                         {% for army_list in army_lists %}
                         <tr>
-                            <td>
-                                <a class='link-custom'
+                            <td data-label="Name">
+                                <a
+                                    class="link-custom"
                                     href="{% url 'armylist_detail' army_list.pk %}"
                                 >
                                     {{ army_list.name }}
                                 </a>
                             </td>
-                            <td>{{ army_list.faction.name }}</td>
-                            <td>{{ army_list.total_points }}</td>
-                            <td>
+                            <td data-label="Faction">
+                                {{ army_list.faction.name }}
+                            </td>
+                            <td data-label="Points">
+                                {{ army_list.total_points }}
+                            </td>
+                            <td data-label="Point Limit">
                                 {% if army_list.point_limit %} {{ army_list.point_limit }}
                                 {% else %}
                                 <span>No limit</span>
                                 {% endif %}
                             </td>
-                            <td>{{ army_list.updated_on|date:"M d, Y" }}</td>
-                            <td>
+                            <td data-label="Last Updated">
+                                {{ army_list.updated_on|date:"M d, Y" }}
+                            </td>
+                            <td data-label="Actions">
                                 <a
                                     href="{% url 'armylist_detail' army_list.pk %}"
                                     class="btn btn-sm btn-custom"
@@ -104,7 +111,8 @@
 
                     <li class="page-item active">
                         <span class="page-link">
-                            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+                            Page {{ page_obj.number }} of {{
+                            page_obj.paginator.num_pages }}
                         </span>
                     </li>
 
