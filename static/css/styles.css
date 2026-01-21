@@ -247,6 +247,12 @@ body {
     border: var(--tertiary-accent) 2px solid;
 }
 
+.world-img{
+    border-radius : 20px;
+    height: 90%;
+    width : 90%;
+}
+
 /* Faction Button Styles */
 .btn-duchies {
     background-color: var(--duchies-colour);
