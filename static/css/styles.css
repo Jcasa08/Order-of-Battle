@@ -19,7 +19,7 @@
     /* Text Colours */
     --primary-text-colour: #d4c5b0;
     --secondary-text-colour: #a39482;
-    --muted-text-colour: #6b5d52;
+    --muted-text-colour: #a19388;
 
     /* Accent Colors */
     --primary-accent: #640619;
@@ -342,21 +342,20 @@ body {
 }
 
 /* Table Styles */
-table {
+.table-custom {
+    color: var(--primary-text-colour);
+    background-color: var(--secondary-bg-colour);
+}
+
+.table-custom th {
+    background-color: var(--bg-highlight-colour);
+    border: 1px solid var(--tertiary-accent);
     color: var(--primary-text-colour);
 }
 
-.table thead {
-    background-color: var(--bg-highlight-colour);
-    border-color: var(--tertiary-accent);
-}
-
-.table tbody tr {
-    border-color: var(--tertiary-accent);
-}
-
-.table tbody tr:hover {
-    background-color: var(--bg-highlight-colour);
+ .table-custom tr:hover{
+    background-color: var(--tertiary-accent);
+    color: var(--primary-text-colour) !important;
 }
 
 /* Modal Styles */
@@ -382,4 +381,16 @@ table {
 .modal-footer {
     background-color: var(--bg-highlight-colour);
     border-top: 1px solid var(--tertiary-accent);
+}
+
+
+/* Link  Styles */
+.link-custom {
+    color: var(--secondary-accent);
+    text-decoration: none;
+}
+
+.link-custom:hover {
+    color: var(--secondary-accent);
+    text-decoration: underline;
 }

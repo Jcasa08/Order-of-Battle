@@ -99,8 +99,7 @@
                     </p>
 
                     <p>
-                        <strong>Total Points:</strong> {{ army_list.total_points
-                        }}
+                        <strong>Total Points:</strong> {{ army_list.total_points }}
                     </p>
                     <p>
                         <strong>Point Limit:</strong>
@@ -111,8 +110,8 @@
                         <span class="badge bg-success">At Limit</span>
                         {% else %}
                         <span class="badge bg-info">
-                            {{army_list.point_limit|add:"-"|add:army_list.total_points }} 
-                            remaining</span>
+                            {{ army_list.point_limit|add:"-"|add:army_list.total_points }} 
+                            Under Limit</span>
                         {% endif %} 
                         {% else %}
                         <span class="text-muted">No limit</span>
@@ -120,11 +119,11 @@
                     </p>
                     <p>
                         <strong>Created:</strong>
-                        {{army_list.created_on|date:"M d, Y g:i A" }}
+                        {{ army_list.created_on|date:"M d, Y g:i A" }}
                     </p>
                     <p>
                         <strong>Last Updated:</strong>
-                        {{army_list.updated_on|date:"M d, Y g:i A" }}
+                        {{ army_list.updated_on|date:"M d, Y g:i A" }}
                     </p>
                 </div>
             </div>
