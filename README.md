@@ -509,13 +509,14 @@ The best practices score is due to using 3rd party cookies belonging to Cloudina
 
 #### Lists Page
 ![screenshot](readme-images/lh-lists.png)
+
 #### List Detail Page
 ![screenshot](readme-images/lh-lists-detail.png)
 
-
-
 ### Responsivity Tests
-Chrome Developer Tools were used throught the development of this project to insure that the site remained consistent on a range of devices.
+Chrome Developer Tools and Responsively used throught the development of this project to insure that the site remained consistent on a range of devices.
+
+![screenshot](readme-images/responsively.png)
 
 ### Validators
 
