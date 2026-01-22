@@ -1,18 +1,14 @@
 {% load static %} {% url 'home' as home_url %} {% url 'world' as world_url %} 
 {% url 'factions' as factions_url %} {% url 'armylist_list' as armylist_list_url %}
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         {% load bootstrap5 %} {% bootstrap_css %} {% bootstrap_javascript %}
-        <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
-        <link
-            rel="icon"
-            type="image/png"
-            href="{% static 'images/favicon.ico' %}"
-        />
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+        <link rel="icon" type="image/png" href="{% static 'images/favicon.ico' %}">
         <script src="https://kit.fontawesome.com/5089733e1f.js" crossorigin="anonymous"></script>
         <title>Order of Battle</title>
     </head>
@@ -20,17 +16,11 @@
     <body>
         <header>
             <!-- Navbar -->
-            <nav
-                class="navbar navbar-expand-lg bg-body-tertiary"
-                aria-label="Main navigation"
-            >
+            <nav class="navbar navbar-expand-lg bg-body-tertiary" aria-label="Main navigation">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="{% url 'home' %}"
-                        ><img
-                            class="navbar-img"
-                            src="{% static 'images/logo.webp' %}"
-                            alt="Order of Battle Logo"
-                    /></a>
+                    <a class="navbar-brand" href="{% url 'home' %}">
+                        <img class="navbar-img" src="{% static 'images/logo.webp' %}" alt="Order of Battle Logo">
+                    </a>
                     <button
                         class="navbar-toggler"
                         type="button"
@@ -50,29 +40,18 @@
                             <li class="nav-item">
                                 <a
                                     class="nav-link {% if request.path == home_url %}active{% endif %}"
-                                    {%
-                                    if
-                                    request.path=""
-                                    ="home_url"
-                                    %}aria-current="page"
-                                    {%
-                                    endif
-                                    %}
+                                    {% if request.path == home_url %}
+                                    aria-current="page"
+                                    {% endif %}
                                     href="{% url 'home' %}"
-                                    >Home</a
-                                >
+                                    >Home</a>
                             </li>
                             <li class="nav-item">
                                 <a
                                     class="nav-link {% if request.path == world_url %}active{% endif %}"
-                                    {%
-                                    if
-                                    request.path=""
-                                    ="world_url"
-                                    %}aria-current="page"
-                                    {%
-                                    endif
-                                    %}
+                                    {% if request.path == world_url %}
+                                    aria-current="page"
+                                    {% endif %}
                                     href="{% url 'world' %}"
                                     >World</a
                                 >
@@ -80,14 +59,9 @@
                             <li class="nav-item">
                                 <a
                                     class="nav-link {% if request.path == factions_url %}active{% endif %}"
-                                    {%
-                                    if
-                                    request.path=""
-                                    ="factions_url"
-                                    %}aria-current="page"
-                                    {%
-                                    endif
-                                    %}
+                                    {% if request.path == factions_url %}
+                                    aria-current="page"
+                                    {% endif %}
                                     href="{% url 'factions' %}"
                                     >Factions</a
                                 >
@@ -95,14 +69,9 @@
                             <li class="nav-item">
                                 <a
                                     class="nav-link {% if request.path == armylist_list_url %}active{% endif %}"
-                                    {%
-                                    if
-                                    request.path=""
-                                    ="armylist_list_url"
-                                    %}aria-current="page"
-                                    {%
-                                    endif
-                                    %}
+                                    {% if request.path == armylist_list_url %}
+                                    aria-current="page"
+                                    {% endif %}
                                     href="{% url 'armylist_list' %}"
                                     >Lists</a
                                 >
@@ -168,14 +137,13 @@
 
         <footer
             class="footer text-center text-lg-start mt-4"
-            role="contentinfo"
             aria-label="Site footer"
         >
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-6 socials text-center">Check me out: <a href="https://github.com/Jcasa08" target="_blank" rel='noopener'><i class="fa-brands fa-github"></i></a> <a href="https://www.linkedin.com/in/joseph-casamassa96/" target="_blank" rel='noopener'><i class="fa-brands fa-linkedin"></i></a> </br>© 2026 Order of Battle</div>
+                    <div class="col-md-6 socials text-center">Check me out: <a href="https://github.com/Jcasa08" target="_blank" rel='noopener'><i class="fa-brands fa-github"></i></a> <a href="https://www.linkedin.com/in/joseph-casamassa96/" target="_blank" rel='noopener'><i class="fa-brands fa-linkedin"></i></a> <br>© 2026 Order of Battle</div>
                     <div class="col-md-6 feedback text-center">
-                        <p>Want to give me feedback on the site? </br> Email me at <a href="mailto:orderofbattle4@gmail.com">orderofbattle4@gmail.com</a></p>
+                        <p>Want to give me feedback on the site? <br> Email me at <a href="mailto:orderofbattle4@gmail.com">orderofbattle4@gmail.com</a></p>
                     </div>
                 </div>
             </div>
