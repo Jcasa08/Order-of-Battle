@@ -74,19 +74,43 @@ In terms of design, I wanted to create a gritty feel to match the tone of the se
 
 ### Typography
 
+[**Font Awesome**](https://fontawesome.com/) icons were used across the site, namely for the social media icons
+
+[**Cinzel**](https://fonts.google.com/specimen/Cinzel) was used for headers and primary text.
+
+[**Roboto**](https://fonts.google.com/specimen/Roboto) was used for all other secondary text.
+
 ### Colour Scheme
+
+![screenshot](readme-images/swatch.png)
+
+A colour palette was picked to reflect the 'grim-dark' nature of the world. A charcoal background with a red navbar and footer, as well as using a gold for accents and ivory for text helped maintain reabability and keep elements visually separate.
 
 ## Wireframes
 
 ### Home Page Wireframe
 
+![screenshot](readme-images/homepage-wf.png)
+
 ### World Page Wireframe
+
+![screenshot](readme-images/worldpage-wf.png)
 
 ### Factions Page Wireframe
 
+![screenshot](readme-images/factions-wf.png)
+
 ### Factions Detail Wireframe
 
+![screenshot](readme-images/factiondetail-wf.png)
+
 ### Army List Wireframe
+
+![screenshot](readme-images/lists-wf.png)
+
+### Army List Detailed View Wireframe
+
+![screenshot](readme-images/lists-detail-wf.png)
 
 ## User Stories
 
