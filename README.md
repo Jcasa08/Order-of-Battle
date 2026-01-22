@@ -88,6 +88,21 @@ A colour palette was picked to reflect the 'grim-dark' nature of the world. A ch
 
 ## Wireframes
 
+### Initial Design
+My original wireframes for this project are listed below. They followed a similar style to other 'army builder' apps. However, early in development, I decided that I wanted to take a different approach. I went back to my wireframes and completely redid them but still kept some features.
+
+![screenshot](readme-images/og-wireframe1.png)
+
+![screenshot](readme-images/og-wireframe2.png)
+
+![screenshot](readme-images/og-wireframe3.png)
+
+![screenshot](readme-images/og-wireframe4.png)
+
+As you can see the home, world and faction pages remained fairly similar, the list page was completely overhauled. My reasoning for this is due to the fact this project is still in early development, there is not yet all the information that other army builder app has. The change in layout helps keep the page clean and readable, with there being no blank or 'development' spaces that are waiting for content.
+
+In the future, once the rules have been further fleshed out, the design of the website may change again to reflect the additional content.
+  
 ### Home Page Wireframe
 
 ![screenshot](readme-images/homepage-wf.png)
@@ -384,6 +399,133 @@ Manual Testing was carried out on the below browsers for compatibility:
 |Register new account | Success | |
 |Access Admin interface | Success | |
 |Open new page from social link | Success | |
+|Responsivity | Success | |
+
+#### Avast
+
+| Test | Expected Result | Actual Result |
+| :---: | :---: |:---: |
+|Click Home Link | Success | |
+|Click World Link | Success | |
+|Click Faction Link | Success | |
+|Click Lists Link | Success | |
+|Click Login Link | Success | |
+|Click Logout Link | Success | |
+|Click Register Link | Success | |
+|Click Build a List button | Success | |
+|Click Faction buttons | Success | |
+|Click Back to Faction button | Success | |
+|Open and close accordion | Success | |
+|Redirect if not logged in and go to lists | Success | |
+|Click individual list | Success | |
+|Create, edit, delete list | Success | |
+|Add, edit, delete unit from list | Success | |
+|Click email link | Success | |
+|Click GitHub link | Success | |
+|Click LinkedIn link | Success | |
+|Register new account | Success | |
+|Access Admin interface | Success | |
+|Open new page from social link | Success | |
+|Responsivity | Success | |
+
+#### Edge
+
+| Test | Expected Result | Actual Result |
+| :---: | :---: |:---: |
+|Click Home Link | Success | |
+|Click World Link | Success | |
+|Click Faction Link | Success | |
+|Click Lists Link | Success | |
+|Click Login Link | Success | |
+|Click Logout Link | Success | |
+|Click Register Link | Success | |
+|Click Build a List button | Success | |
+|Click Faction buttons | Success | |
+|Click Back to Faction button | Success | |
+|Open and close accordion | Success | |
+|Redirect if not logged in and go to lists | Success | |
+|Click individual list | Success | |
+|Create, edit, delete list | Success | |
+|Add, edit, delete unit from list | Success | |
+|Click email link | Success | |
+|Click GitHub link | Success | |
+|Click LinkedIn link | Success | |
+|Register new account | Success | |
+|Access Admin interface | Success | |
+|Open new page from social link | Success | |
+|Responsivity | Success | |
+
+#### Firefox
+
+| Test | Expected Result | Actual Result |
+| :---: | :---: |:---: |
+|Click Home Link | Success | |
+|Click World Link | Success | |
+|Click Faction Link | Success | |
+|Click Lists Link | Success | |
+|Click Login Link | Success | |
+|Click Logout Link | Success | |
+|Click Register Link | Success | |
+|Click Build a List button | Success | |
+|Click Faction buttons | Success | |
+|Click Back to Faction button | Success | |
+|Open and close accordion | Success | |
+|Redirect if not logged in and go to lists | Success | |
+|Click individual list | Success | |
+|Create, edit, delete list | Success | |
+|Add, edit, delete unit from list | Success | |
+|Click email link | Success | |
+|Click GitHub link | Success | |
+|Click LinkedIn link | Success | |
+|Register new account | Success | |
+|Access Admin interface | Success | |
+|Open new page from social link | Success | |
+|Responsivity | Success | |
+
+
+### Lighthouse Test
+All main pages was tested with Lighthouse and provided the following:
+
+#### Homepage
+The homepage initially received a score of:
+![screenshot](readme-images/lh-home1.png)
+
+After following the advice given by Lighthouse it scored:
+![screenshot](readme-images/lh-home2.png)
+
+#### World page
+The homepage initially received a score of:
+![screenshot](readme-images/lh-world1.png)
+
+After following the advice given by Lighthouse it scored:
+![screenshot](readme-images/lh-world2.png)
+
+#### Factions page
+![screenshot](readme-images/lh-faction.png)
+
+#### Faction detail page
+![screenshot](readme-images/lh-factions-detail.png)
+The best practices score is due to using 3rd party cookies belonging to Cloudinary, which is unaviodable due to using Cloudinary to host images.
+
+#### Lists Page
+![screenshot](readme-images/lh-lists.png)
+#### List Detail Page
+![screenshot](readme-images/lh-lists-detail.png)
+
+
+
+### Responsivity Tests
+Chrome Developer Tools were used throught the development of this project to insure that the site remained consistent on a range of devices.
+
+### Validators
+
+#### HTML
+
+#### CSS
+
+#### JavaScript
+
+#### Python
 
 
 ## Deployment
