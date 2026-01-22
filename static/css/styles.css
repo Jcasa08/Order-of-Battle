@@ -75,12 +75,6 @@ main {
     flex: 1 0 auto;
 }
 
-/* Consistent Padding for Central Elements */
-.container,
-.container-fluid {
-    padding-left: 20px;
-    padding-right: 20px;
-}
 
 /* Form Styles */
 .form-control,
@@ -153,6 +147,19 @@ label {
     color: var(--primary-text-colour);
     border-top: var(--secondary-accent) 1px solid;
     flex-shrink: 0;
+}
+
+.socials {
+    padding: 10px;
+}
+
+.socials a {
+    color: var(--primary-text-colour);
+    text-decoration: none;
+}
+
+.feedback {
+    padding: 10px;
 }
 
 /* Sticky footer */
