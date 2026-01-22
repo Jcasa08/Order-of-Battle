@@ -9,9 +9,66 @@ In terms of design, I wanted to create a gritty feel to match the tone of the se
 
 ## Desktop
 
-## Tablet 
+### Homepage
+
+![screenshot](readme-images/desktop-homepage.jpeg)
+
+### Worldpage
+
+![screenshot](readme-images/desktop-worldpage.jpeg)
+
+### Listpage
+
+![screenshot](readme-images/desktop-listpage.jpeg)
+
+![screenshot](readme-images/desktop-newlist.jpeg)
+
+
+### List Detail page
+
+![screenshot](readme-images/desktop-listdetail.jpeg)
+
+## Tablet
+
+### Homepage
+
+![screenshot](readme-images/ipad-homepage.jpeg)
+
+### Worldpage
+
+![screenshot](readme-images/ipad-worldpage.jpeg)
+
+
+### Listpage
+
+![screenshot](readme-images/ipad-listpage.jpeg)
+
+![screenshot](readme-images/ipad-newlistpage.jpeg)
+
+### List Detail page
+
+![screenshot](readme-images/ipad-listdetail.jpeg)
+
 
 ## Mobile
+
+### Homepage
+
+![screenshot](readme-images/iphone-homepage.jpeg)
+
+### Worldpage
+
+![screenshot](readme-images/iphone-worldpage.jpeg)
+
+### Listpage
+
+![screenshot](readme-images/iphone-listpage.jpeg)
+
+![screenshot](readme-images/iphone-newlist.jpeg)
+
+### List Detail page
+
+![screenshot](readme-images/iphone-listdetail.jpeg)
 
 ## UX 
 
