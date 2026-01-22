@@ -372,7 +372,18 @@ Manual Testing was carried out on the below browsers for compatibility:
 |Click Register Link | Success | |
 |Click Build a List button | Success | |
 |Click Faction buttons | Success | |
-
+|Click Back to Faction button | Success | |
+|Open and close accordion | Success | |
+|Redirect if not logged in and go to lists | Success | |
+|Click individual list | Success | |
+|Create, edit, delete list | Success | |
+|Add, edit, delete unit from list | Success | |
+|Click email link | Success | |
+|Click GitHub link | Success | |
+|Click LinkedIn link | Success | |
+|Register new account | Success | |
+|Access Admin interface | Success | |
+|Open new page from social link | Success | |
 
 
 ## Deployment
