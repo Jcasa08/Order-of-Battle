@@ -169,3 +169,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Message Handlers
 SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 MESSAGE_STORAGE = 'django.contrib.messages.storage.fallback.FallbackStorage'
+
+# X-Frame-Options - Allow framing for responsive testing tools
+X_FRAME_OPTIONS = 'SAMEORIGIN'
