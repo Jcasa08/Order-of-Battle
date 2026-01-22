@@ -75,6 +75,13 @@ main {
     flex: 1 0 auto;
 }
 
+/* Consistent Padding for Central Elements */
+.container,
+.container-fluid {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
 /* Form Styles */
 .form-control,
 .form-select {
@@ -203,7 +210,15 @@ body {
     border-radius: 20px;
     height: 90%;
     width: 90%;
-    margin-left: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.welcome-message {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-right: 50px;
 }
 
 /* World page styles */
@@ -247,10 +262,13 @@ body {
     border: var(--tertiary-accent) 2px solid;
 }
 
-.world-img{
-    border-radius : 20px;
+.world-img {
+    border-radius: 20px;
     height: 90%;
-    width : 90%;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
 
 /* Faction Button Styles */
@@ -488,7 +506,8 @@ body {
     }
 
     /* Better spacing on mobile */
-    .container {
+    .container,
+    .container-fluid {
         padding-left: 15px;
         padding-right: 15px;
     }
