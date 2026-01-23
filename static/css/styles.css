@@ -56,6 +56,17 @@ p > a {
     text-decoration: underline;
 }
 
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    font-family: var(--secondary-font);
+    color: var(--primary-text-colour);
+    text-shadow: var(--secondary-text-colour) 1px 1px 2px;
+}
+
 /* Heading Utilities */
 .heading-custom {
     font-family: var(--secondary-font);
