@@ -446,8 +446,9 @@ body {
 }
 
 .modal-header {
-    background-color: var(--bg-highlight-colour);
+    background-color: var(--delete-colour);
     border-bottom: 1px solid var(--tertiary-accent);
+    color: var(--primary-text-colour);
 }
 
 .modal-title {

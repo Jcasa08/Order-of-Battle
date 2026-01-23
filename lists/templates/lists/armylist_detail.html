@@ -25,18 +25,19 @@
                         class="modal fade"
                         id="deleteModal"
                         tabindex="-1"
+                        role="dialog"
                         aria-labelledby="deleteModalLabel"
                         aria-hidden="true"
                     >
                         <div class="modal-dialog">
                             <div class="modal-content">
-                                <div class="modal-header bg-danger text-white">
-                                    <h5
-                                        class="modal-title"
+                                <div class="modal-header">
+                                    <p
+                                        class="modal-title h5"
                                         id="deleteModalLabel"
                                     >
                                         Delete Army List
-                                    </h5>
+                                    </p>
                                     <button
                                         type="button"
                                         class="btn-close btn-close-white"
@@ -97,7 +98,7 @@
                     </form>
                 </div>
             </div>
-            <hr />
+            <hr>
         </div>
     </div>
 
@@ -105,7 +106,7 @@
         <div class="col-md-6">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">List Information</h5>
+                    <p class="card-title h5">List Information</p>
                     <p>
                         <strong>Faction:</strong> {{ army_list.faction.name }}
                     </p>
@@ -143,7 +144,7 @@
         <div class="col-md-6">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Add Unit to List</h5>
+                    <p class="card-title h5">Add Unit to List</p>
                     <form
                         method="post"
                         action="{% url 'add_unit_to_list' army_list.pk %}"
@@ -180,7 +181,7 @@
                                 value="1"
                                 min="1"
                                 required
-                            />
+                            >
                         </div>
 
                         <div class="mb-3">
