@@ -523,6 +523,12 @@ Chrome Developer Tools and Responsively used throught the development of this pr
 
 ![screenshot](readme-images/responsively.png)
 
+### Automated Testing
+
+Automated testing was carried out and no errors returned
+
+![screenshot](readme-images/autotest3.png)
+
 ### Validators
 
 #### HTML
@@ -598,7 +604,7 @@ As this project was developed as a capstone project for Code Institute's AI Augm
 
 ### Claude Sonnet
 
-Claude was used during the whole project, from helping me collate ideas and come up with initial plans, to fleshing out content to help the site feel more rounded. Claude was also used in VS Code to pair program with. It was used for debugging, reformatting and allowing it to complete certain sections of code with explicit instructions.
+Claude was used during the whole project, from helping me collate ideas and come up with initial plans, to fleshing out content to help the site feel more rounded. Claude was also used in VS Code to pair program with. It was used for debugging, testing, reformatting and allowing it to complete certain sections of code with explicit instructions.
 
 Below is an example of how I used Claude AI to help me fix an error regarding images not loading.
 
@@ -607,6 +613,12 @@ Below is an example of how I used Claude AI to help me fix an error regarding im
 ![screenshot](readme-images/claude2.png)
 
 ![screenshot](readme-images/claude3.png)
+
+A futher example of how Claude created automated tests:
+
+![screenshot](readme-images/autotest1.png)
+
+![screenshot](readme-images/autotest2.png)
 
 ### Midjourney
 
