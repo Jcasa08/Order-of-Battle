@@ -523,6 +523,15 @@ Chrome Developer Tools and Responsively used throught the development of this pr
 #### HTML
 The HTML validator was used to check all pages of the site, any errors that were present were fixed before final deployment:
 
+Error example on faction detail page:
+![screenshot](readme-images/html-validator-faction-detail-error.png)
+
+The errors were mainly due to extra end tags and incorrect semantic ordering of headers, to fix this, I had to make sure end tags were removed from the summernote field on the admin panel and change any headers to p elements, using Bootstrap's header classes to achieve the desired style.
+
+As you can see this then solved the errors and all other faction pages were updated accordingly:
+
+![screenshot](readme-images/html-validator-faction-detail-fixed.png)
+
 
 #### CSS
 No errors were found on the CSS validator:
