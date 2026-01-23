@@ -383,109 +383,109 @@ Manual Testing was carried out on the below browsers for compatibility:
 
 | Test | Expected Result | Actual Result |
 | :---: | :---: |:---: |
-|Click Home Link | Success | |
-|Click World Link | Success | |
-|Click Faction Link | Success | |
-|Click Lists Link | Success | |
-|Click Login Link | Success | |
-|Click Logout Link | Success | |
-|Click Register Link | Success | |
-|Click Build a List button | Success | |
-|Click Faction buttons | Success | |
-|Click Back to Faction button | Success | |
-|Open and close accordion | Success | |
-|Redirect if not logged in and go to lists | Success | |
-|Click individual list | Success | |
-|Create, edit, delete list | Success | |
-|Add, edit, delete unit from list | Success | |
-|Click email link | Success | |
-|Click GitHub link | Success | |
-|Click LinkedIn link | Success | |
-|Register new account | Success | |
-|Access Admin interface | Success | |
-|Open new page from social link | Success | |
-|Responsivity | Success | |
+|Click Home Link | Success |Success |
+|Click World Link | Success |Success |
+|Click Faction Link | Success | Success|
+|Click Lists Link | Success |Success |
+|Click Login Link | Success | Success|
+|Click Logout Link | Success |Success |
+|Click Register Link | Success |Success |
+|Click Build a List button | Success |Success |
+|Click Faction buttons | Success |Success |
+|Click Back to Faction button | Success |Success |
+|Open and close accordion | Success | Success|
+|Redirect if not logged in and go to lists | Success |Success |
+|Click individual list | Success |Success |
+|Create, edit, delete list | Success |Success |
+|Add, edit, delete unit from list | Success |Success |
+|Click email link | Success | Success|
+|Click GitHub link | Success |Success |
+|Click LinkedIn link | Success |Success |
+|Register new account | Success | Success|
+|Access Admin interface | Success | Success|
+|Open new page from social link | Success |Success |
+|Responsivity | Success |Success |
 
 #### Avast
 
 | Test | Expected Result | Actual Result |
 | :---: | :---: |:---: |
-|Click Home Link | Success | |
-|Click World Link | Success | |
-|Click Faction Link | Success | |
-|Click Lists Link | Success | |
-|Click Login Link | Success | |
-|Click Logout Link | Success | |
-|Click Register Link | Success | |
-|Click Build a List button | Success | |
-|Click Faction buttons | Success | |
-|Click Back to Faction button | Success | |
-|Open and close accordion | Success | |
-|Redirect if not logged in and go to lists | Success | |
-|Click individual list | Success | |
-|Create, edit, delete list | Success | |
-|Add, edit, delete unit from list | Success | |
-|Click email link | Success | |
-|Click GitHub link | Success | |
-|Click LinkedIn link | Success | |
-|Register new account | Success | |
-|Access Admin interface | Success | |
-|Open new page from social link | Success | |
-|Responsivity | Success | |
+|Click Home Link | Success |Success |
+|Click World Link | Success |Success |
+|Click Faction Link | Success | Success|
+|Click Lists Link | Success |Success |
+|Click Login Link | Success |Success |
+|Click Logout Link | Success | Success|
+|Click Register Link | Success | Success|
+|Click Build a List button | Success |Success |
+|Click Faction buttons | Success | Success|
+|Click Back to Faction button | Success | Success|
+|Open and close accordion | Success |Success |
+|Redirect if not logged in and go to lists | Success | Success|
+|Click individual list | Success |Success |
+|Create, edit, delete list | Success |Success |
+|Add, edit, delete unit from list | Success |Success |
+|Click email link | Success |Success |
+|Click GitHub link | Success | Success|
+|Click LinkedIn link | Success |Success |
+|Register new account | Success |Success |
+|Access Admin interface | Success |Success |
+|Open new page from social link | Success | Success|
+|Responsivity | Success |Success |
 
 #### Edge
 
 | Test | Expected Result | Actual Result |
 | :---: | :---: |:---: |
-|Click Home Link | Success | |
-|Click World Link | Success | |
-|Click Faction Link | Success | |
-|Click Lists Link | Success | |
-|Click Login Link | Success | |
-|Click Logout Link | Success | |
-|Click Register Link | Success | |
-|Click Build a List button | Success | |
-|Click Faction buttons | Success | |
-|Click Back to Faction button | Success | |
-|Open and close accordion | Success | |
-|Redirect if not logged in and go to lists | Success | |
-|Click individual list | Success | |
-|Create, edit, delete list | Success | |
-|Add, edit, delete unit from list | Success | |
-|Click email link | Success | |
-|Click GitHub link | Success | |
-|Click LinkedIn link | Success | |
-|Register new account | Success | |
-|Access Admin interface | Success | |
-|Open new page from social link | Success | |
-|Responsivity | Success | |
+|Click Home Link | Success |Success |
+|Click World Link | Success | Success|
+|Click Faction Link | Success |Success |
+|Click Lists Link | Success | Success|
+|Click Login Link | Success |Success |
+|Click Logout Link | Success | Success|
+|Click Register Link | Success |Success |
+|Click Build a List button | Success |Success |
+|Click Faction buttons | Success |Success |
+|Click Back to Faction button | Success |Success |
+|Open and close accordion | Success | Success|
+|Redirect if not logged in and go to lists | Success |Success |
+|Click individual list | Success | Success|
+|Create, edit, delete list | Success |Success |
+|Add, edit, delete unit from list | Success |Success |
+|Click email link | Success | Success|
+|Click GitHub link | Success | Success|
+|Click LinkedIn link | Success |Success |
+|Register new account | Success | Success|
+|Access Admin interface | Success | Success|
+|Open new page from social link | Success |Success |
+|Responsivity | Success |Success |
 
 #### Firefox
 
 | Test | Expected Result | Actual Result |
 | :---: | :---: |:---: |
-|Click Home Link | Success | |
-|Click World Link | Success | |
-|Click Faction Link | Success | |
-|Click Lists Link | Success | |
-|Click Login Link | Success | |
-|Click Logout Link | Success | |
-|Click Register Link | Success | |
-|Click Build a List button | Success | |
-|Click Faction buttons | Success | |
-|Click Back to Faction button | Success | |
-|Open and close accordion | Success | |
-|Redirect if not logged in and go to lists | Success | |
-|Click individual list | Success | |
-|Create, edit, delete list | Success | |
-|Add, edit, delete unit from list | Success | |
-|Click email link | Success | |
-|Click GitHub link | Success | |
-|Click LinkedIn link | Success | |
-|Register new account | Success | |
-|Access Admin interface | Success | |
-|Open new page from social link | Success | |
-|Responsivity | Success | |
+|Click Home Link | Success | Success|
+|Click World Link | Success |Success |
+|Click Faction Link | Success |Success |
+|Click Lists Link | Success | Success|
+|Click Login Link | Success | Success|
+|Click Logout Link | Success |Success |
+|Click Register Link | Success |Success |
+|Click Build a List button | Success | Success|
+|Click Faction buttons | Success | Success|
+|Click Back to Faction button | Success |Success |
+|Open and close accordion | Success | Success|
+|Redirect if not logged in and go to lists | Success |Success |
+|Click individual list | Success | Success|
+|Create, edit, delete list | Success |Success |
+|Add, edit, delete unit from list | Success | Success|
+|Click email link | Success |Success |
+|Click GitHub link | Success |Success |
+|Click LinkedIn link | Success | Success|
+|Register new account | Success | Success|
+|Access Admin interface | Success | Success|
+|Open new page from social link | Success |Success |
+|Responsivity | Success | Success|
 
 
 ### Lighthouse Test
