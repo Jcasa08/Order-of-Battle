@@ -6,7 +6,7 @@ A site user should be able to view lore and information about the world, faction
 
 In terms of design, I wanted to create a gritty feel to match the tone of the setting, without affecting readability of the site. The layout was designed to be intuitive and easy to navigate, with various call to actions to help the site user. 
 
-The live link can be found [here.]()
+The live link can be found [here.](https://order-of-battle-419cfb1e24e1.herokuapp.com/)
 
 ## Desktop
 
