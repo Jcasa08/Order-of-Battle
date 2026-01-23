@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col-12">
             <h1>Delete Army List</h1>
-            <hr />
+            <hr>
         </div>
     </div>
 
@@ -11,7 +11,7 @@
         <div class="col-md-8 offset-md-2">
             <div class="card">
                 <div class="card-header bg-danger-custom text-white">
-                    <h4 class="mb-0">Confirm Deletion</h4>
+                    <p class="mb-0 h4">Confirm Deletion</p>
                 </div>
                 <div class="card-body">
                     <div class="alert alert-warning">
@@ -24,19 +24,19 @@
 
                     <div class="card mb-3">
                         <div class="card-body">
-                            <h5 class="card-title">{{ object.name }}</h5>
+                            <p class="card-title h5">{{ object.name }}</p>
                             <p class="card-text">
                                 <strong>Faction:</strong> {{ object.faction.name }}
-                                <br />
+                                <br>
                                 <strong>Owner:</strong> {{ object.owner.username }}
-                                <br />
+                                <br>
                                 <strong>Total Points:</strong> {{ object.total_points }}
-                                <br />
+                                <br>
                                 <strong>Units:</strong> {{ object.list_units.count }}
-                                <br />
+                                <br>
                                 <strong>Created:</strong>
                                 {{object.created_on|date:"M d, Y" }}
-                                <br />
+                                <br>
                                 <strong>Last Updated:</strong> {{ object.updated_on|date:"M d, Y" }}
                             </p>
                         </div>
