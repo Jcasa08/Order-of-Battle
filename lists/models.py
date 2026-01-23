@@ -23,7 +23,9 @@ class ArmyList(models.Model):
         indexes = [models.Index(fields=['owner', 'faction'])]
 
     def __str__(self):
-        return f"{self.name} - {self.faction.name} ({self.total_points} pts) \n    created by {self.owner.username}"
+        return (f"{self.name} - {self.faction.name} "
+                f"({self.total_points} pts)"
+                f"\n created by {self.owner.username}")
 
 
 class ListUnit(models.Model):

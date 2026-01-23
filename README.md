@@ -539,6 +539,10 @@ No errors were found on the CSS validator:
 
 #### JavaScript
 
+No errors were reported when using JSHint to validate the JavaScript:
+
+![screenshot](readme-images/jshint.png)
+
 #### Python
 
 
