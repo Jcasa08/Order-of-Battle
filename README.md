@@ -521,8 +521,12 @@ Chrome Developer Tools and Responsively used throught the development of this pr
 ### Validators
 
 #### HTML
+The HTML validator was used to check all pages of the site, any errors that were present were fixed before final deployment:
+
 
 #### CSS
+No errors were found on the CSS validator:
+![screenshot](readme-images/css-validator.png)
 
 #### JavaScript
 

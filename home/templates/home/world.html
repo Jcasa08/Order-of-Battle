@@ -1,153 +1,321 @@
-{% extends "base.html" %} 
-{% load static %} 
-{% block content %}
+{% extends "base.html" %} {% load static %} {% block content %}
 <div class="container">
+    <!-- Page Title -->
     <div class="row">
         <div class="text-center">
             <h1>The World of Ashenfell</h1>
         </div>
     </div>
+
+    <!-- Map and Geography Section -->
     <div class="row">
-        <div>
-            <img src="{% static 'images/map.webp' %}" class="col-12 mt-4 mb-4 img-fluid world-img" alt="Map of Ashenfell">
+        <div class="col-12">
+            <img
+                src="{% static 'images/map.webp' %}"
+                class="mt-4 mb-4 img-fluid world-img"
+                alt="Map of Ashenfell"
+            >
         </div>
-        <div class="text-center mt-3">
+        <div class="col-12 text-center mt-3">
             <h2>Geography</h2>
             <p>
                 Ashenfell is a continent roughly the size of medieval Europe,
-                bordered by the Endless Ocean to the west, the Bloodstone Mountains to
-                the north, the Shattered Isles to the south, what is known as the Sylvaan Tangle
-                to the east and beyond that the Deadlands. The name itself is grim prophecy, ash from countless
+                bordered by the Endless Ocean to the west, the Bloodstone
+                Mountains to the north, the Shattered Isles to the south, what
+                is known as the Sylvaan Tangle to the east and beyond that the
+                Deadlands. The name itself is grim prophecy, ash from countless
                 burnings, and the fell promise of more death to come.
             </p>
         </div>
+    </div>
+
+    <!-- Regions Accordion -->
+    <div class="row">
+        <div class="col-12">
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+                <!-- The Ironlands -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseOne"
+                            aria-expanded="false"
+                            aria-controls="flush-collapseOne"
+                        >
+                            The Ironlands
+                        </button>
+                    </h2>
+                    <div
+                        id="flush-collapseOne"
+                        class="accordion-collapse collapse"
+                        data-bs-parent="#accordionFlushExample"
+                    >
+                        <div class="accordion-body">
+                            The heartland of human civilization. Rolling plains
+                            broken by fortress-cities, each surrounded by
+                            scorched earth, crops burned to deny invaders,
+                            villages razed as defensive measures. The soil here
+                            is dark, enriched by centuries of blood. Rivers run
+                            brown with silt from eroded battlefields. This is
+                            where the Duchies hold their ground, where every
+                            farm is a fortification and every farmer knows how
+                            to wield a spear.
+                            <img
+                                src="{% static 'images/ironlands.webp' %}"
+                                class="col-12 mt-4 mb-4 img-fluid world-img"
+                                alt="Ironlands Landscape"
+                            >
+                        </div>
+                    </div>
+                </div>
+
+                <!-- The Blighted Wastes -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseTwo"
+                            aria-expanded="false"
+                            aria-controls="flush-collapseTwo"
+                        >
+                            The Blighted Wastes
+                        </button>
+                    </h2>
+                    <div
+                        id="flush-collapseTwo"
+                        class="accordion-collapse collapse"
+                        data-bs-parent="#accordionFlushExample"
+                    >
+                        <div class="accordion-body">
+                            The buffer zone between human and Orc territory.
+                            Once this was farmland, the breadbasket of the old
+                            Empire. The first Green Tide changed that. Decades
+                            of warfare have rendered it nearly uninhabitable.
+                            Poisoned wells, salted earth, corpse-riddled fields.
+                            Neither side can hold it permanently, so both raid
+                            constantly. What few settlements remain are
+                            fortified camps, changing hands monthly. The
+                            residents are scavengers and deserters, predators
+                            and carrion-eaters. This is where armies go to die,
+                            where soldiers disappear, where no one goes
+                            willingly.
+                            <img
+                                src="{% static 'images/blighted-wastes.webp' %}"
+                                class="col-12 mt-4 mb-4 img-fluid world-img"
+                                alt="Blighted Wastes Landscape"
+                            >
+                        </div>
+                    </div>
+                </div>
+
+                <!-- The Bloodstone Mountains -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseThree"
+                            aria-expanded="false"
+                            aria-controls="flush-collapseThree"
+                        >
+                            The Bloodstone Mountains
+                        </button>
+                    </h2>
+                    <div
+                        id="flush-collapseThree"
+                        class="accordion-collapse collapse"
+                        data-bs-parent="#accordionFlushExample"
+                    >
+                        <div class="accordion-body">
+                            A jagged mountain range of black volcanic rock,
+                            stained red with iron deposits that give the
+                            mountains their name. Once these were simply called
+                            the Highpeaks. Now they're the birthplace of the Orc
+                            tribes. The Sundering's magical energies
+                            concentrated here, warping the land itself. Valleys
+                            glow with strange luminescence at night. Water
+                            tastes of copper. The very air seems to vibrate with
+                            barely contained violence.
+                            <img
+                                src="{% static 'images/bloodstone-mountains.webp' %}"
+                                class="col-12 mt-4 mb-4 img-fluid world-img"
+                                alt="Bloodstone Mountains Landscape"
+                            >
+                        </div>
+                    </div>
+                </div>
+
+                <!-- The Sylvaan Tangle -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseFour"
+                            aria-expanded="false"
+                            aria-controls="flush-collapseFour"
+                        >
+                            The Sylvaan Tangle
+                        </button>
+                    </h2>
+                    <div
+                        id="flush-collapseFour"
+                        class="accordion-collapse collapse"
+                        data-bs-parent="#accordionFlushExample"
+                    >
+                        <div class="accordion-body">
+                            What humans call a "forest" is to the Elves an
+                            entire nation. Trees here grow 300 feet tall, their
+                            canopy so thick the forest floor exists in perpetual
+                            twilight. Ancient ruins dot the landscape, towers of
+                            impossible crystal geometry, roads paved with silver
+                            that never tarnishes, fountains that flow with water
+                            unchanged for millennia. But now these marvels are
+                            overgrown, crumbling, forgotten. The forest itself
+                            is alive—not metaphorically, literally. Trees move
+                            to block invading armies. Roots strangle those who
+                            enter with hostile intent. The Elves don't defend
+                            their borders; the forest does it for them. But even
+                            this ancient magic is fading.
+                            <img
+                                src="{% static 'images/sylvaan-tangle.webp' %}"
+                                class="col-12 mt-4 mb-4 img-fluid world-img"
+                                alt="Sylvaan Tangle Landscape"
+                            >
+                        </div>
+                    </div>
+                </div>
+
+                <!-- The Deadlands -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseFive"
+                            aria-expanded="false"
+                            aria-controls="flush-collapseFive"
+                        >
+                            The Deadlands
+                        </button>
+                    </h2>
+                    <div
+                        id="flush-collapseFive"
+                        class="accordion-collapse collapse"
+                        data-bs-parent="#accordionFlushExample"
+                    >
+                        <div class="accordion-body">
+                            Beyond the Sylvan Tangle lies something worse than
+                            warfare: oblivion. The Deadlands are where the
+                            Sundering hit hardest. Reality itself is unstable
+                            here. Time moves strangely, step into a clearing and
+                            emerge days later, though to you it was minutes.
+                            Gravity falters. Colors don't look right. The dead
+                            don't stay buried. No faction claims this territory.
+                            It cannot be conquered. The few expeditions that
+                            ventured into the Deadlands either never returned or
+                            came back... changed. Twisted. The Elves have sealed
+                            the eastern border of their forest, and even the
+                            Orcs won't venture past the Stormwall Mountains.
+                            <img
+                                src="{% static 'images/deadlands.webp' %}"
+                                class="col-12 mt-4 mb-4 img-fluid world-img"
+                                alt="Deadlands Landscape"
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-     <div class="row">
-       <div class="accordion accordion-flush" id="accordionFlushExample">
-    <div class="accordion-item">
-    <h2 class="accordion-header">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-        The Ironlands
-      </button>
-    </h2>
-    <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-      <div class="accordion-body">
-        The heartland of human civilization. Rolling plains broken by fortress-cities, each surrounded by scorched earth, crops burned to deny invaders, villages razed as defensive measures.
-        The soil here is dark, enriched by centuries of blood. Rivers run brown with silt from eroded battlefields.
-        This is where the Duchies hold their ground, where every farm is a fortification and every farmer knows how to wield a spear.
-        <img src="{% static 'images/ironlands.webp' %}" class="col-12 mt-4 mb-4 img-fluid world-img" alt="Ironlands Landscape">
-      </div>
-    </div>
-  </div>
-  <div class="accordion-item">
-    <h2 class="accordion-header">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-        The Blighted Wastes
-      </button>
-    </h2>
-    <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-      <div class="accordion-body">
-        The buffer zone between human and Orc territory. Once this was farmland, the breadbasket of the old Empire. The first Green Tide changed that.
-        Decades of warfare have rendered it nearly uninhabitable. Poisoned wells, salted earth, corpse-riddled fields. Neither side can hold it permanently, so both raid constantly.
-        What few settlements remain are fortified camps, changing hands monthly. The residents are scavengers and deserters, predators and carrion-eaters. 
-        This is where armies go to die, where soldiers disappear, where no one goes willingly.
-        <img src="{% static 'images/blighted-wastes.webp' %}" class="col-12 mt-4 mb-4 img-fluid world-img" alt="Blighted Wastes Landscape">
-      </div>
-    </div>
-  </div>
-  <div class="accordion-item">
-    <h2 class="accordion-header">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-        The Bloodstone Mountains
-      </button>
-    </h2>
-    <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-      <div class="accordion-body">
-        A jagged mountain range of black volcanic rock, stained red with iron deposits that give the mountains their name. 
-        Once these were simply called the Highpeaks. Now they're the birthplace of the Orc tribes. The Sundering's magical energies concentrated here, warping the land itself.
-        Valleys glow with strange luminescence at night. Water tastes of copper. The very air seems to vibrate with barely contained violence.
-        <img src="{% static 'images/bloodstone-mountains.webp' %}" alt="Bloodstone Mountains Landscape" class="col-12 mt-4 mb-4 img-fluid world-img">
-      </div>
-    </div>
-  </div>
-  <div class="accordion-item">
-    <h2 class="accordion-header">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
-        The Sylvaan Tangle
-      </button>
-    </h2>
-    <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-      <div class="accordion-body">What humans call a "forest" is to the Elves an entire nation. Trees here grow 300 feet tall, their canopy so thick the forest floor exists in perpetual twilight.
-        Ancient ruins dot the landscape, towers of impossible crystal geometry, roads paved with silver that never tarnishes, fountains that flow with water unchanged for millennia.
-        But now these marvels are overgrown, crumbling, forgotten.
-        The forest itself is alive—not metaphorically, literally. Trees move to block invading armies. Roots strangle those who enter with hostile intent. 
-        The Elves don't defend their borders; the forest does it for them. But even this ancient magic is fading.
-        <img src=" {% static 'images/sylvaan-tangle.webp' %}" alt="Sylvaan Tangle Landscape" class="col-12 mt-4 mb-4 img-fluid world-img">
-      </div>
-      
-    </div>
-  </div>
-  <div class="accordion-item">
-    <h2 class="accordion-header">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseThree">
-        The Deadlands
-      </button>
-    </h2>
-    <div id="flush-collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-      <div class="accordion-body">
-        Beyond the Sylvan Tangle lies something worse than warfare: oblivion. The Deadlands are where the Sundering hit hardest. Reality itself is unstable here.
-        Time moves strangely, step into a clearing and emerge days later, though to you it was minutes. Gravity falters. Colors don't look right. The dead don't stay buried.
-        No faction claims this territory. It cannot be conquered. The few expeditions that ventured into the Deadlands either never returned or came back... changed. Twisted.
-        The Elves have sealed the eastern border of their forest, and even the Orcs won't venture past the Stormwall Mountains.
-        <img src="{% static 'images/deadlands.webp' %}" alt="Deadlands Landscape" class="col-12 mt-4 mb-4 img-fluid world-img">
-      </div>
-    </div>
-      
-  </div>
-</div>
-    </div>
-    <div class="row">
-        <div class="text-center mt-3 mb-3">
+
+    <!-- History Section -->
+    <div class="row mt-4">
+        <div class="col-12 text-center mt-3 mb-3">
             <h2>History</h2>
         </div>
+
+        <!-- The Sundering -->
         <div class="col-md-6 col-12 text-center">
             <h3>The Sundering</h3>
-            <p class ='mb-3'>
-               Two Hundred Years Ago...
-                The Empire of Aethelmar was at its zenith. Humans and Elves coexisted (if not as equals, at least peacefully). The Orc mountain clans traded peacefully.
-                Magic was understood, controlled, harnessed for the good of all. </br> </br>
-                The Archmagus Council believed they had unlocked the fundamental laws of reality itself.
-                They were attempting the Ascension Ritual, an effort to elevate humanity and elvenkind to a higher plane of existence. No more disease. No more hunger. No more death.
-                It would be civilization's greatest triumph.
-                It was civilization's greatest mistake.
-                The Ritual Failed. </br> </br>
-                Not gradually. Not with warning. One moment, the ritual circle was glowing with power. The next, reality screamed.
-                The magical energies being channeled were too vast, too fundamental. When the ritual collapsed, it didn't just fail, it inverted.
-                Instead of elevating life, it shattered the foundations of existence itself. The Well of Eternity exploded. The capital city was vaporized.
-                A wave of destructive magical energy radiated outward, warping everything it touched. 
+            <p class="mb-3">
+                Two Hundred Years Ago... The Empire of Aethelmar was at its
+                zenith. Humans and Elves coexisted (if not as equals, at least
+                peacefully). The Orc mountain clans traded peacefully. Magic was
+                understood, controlled, harnessed for the good of all.
+                <br><br>
+                The Archmagus Council believed they had unlocked the fundamental
+                laws of reality itself. They were attempting the Ascension
+                Ritual, an effort to elevate humanity and elvenkind to a higher
+                plane of existence. No more disease. No more hunger. No more
+                death. It would be civilization's greatest triumph. It was
+                civilization's greatest mistake. The Ritual Failed.
+                <br><br>
+                Not gradually. Not with warning. One moment, the ritual circle
+                was glowing with power. The next, reality screamed. The magical
+                energies being channeled were too vast, too fundamental. When
+                the ritual collapsed, it didn't just fail, it inverted. Instead
+                of elevating life, it shattered the foundations of existence
+                itself. The Well of Eternity exploded. The capital city was
+                vaporized. A wave of destructive magical energy radiated
+                outward, warping everything it touched.
             </p>
-        </div> 
-        <div class="col-md-6 col-12 text-center">
-            <h3 class='mt-3'>Magic in Ashenfell</h3>
-            <p>
-                Before the Sundering: Magic was a science. Predictable. Safe. Mages studied for decades in academies, learning to channel ambient magical energy through ritualistic formulae. It was used for healing, construction, communication, and transportation. Warfare involved magic, but it was controlled—fireball spells, protective wards, nothing catastrophic. </br> </br> 
-                After the Sundering: Magic is dangerous.
-                The Sundering didn't eliminate magic—it destabilized it. Ambient magical energy is higher now, but chaotic. Spells that once were routine now risk backfiring. Mages who channel too much power risk mutation, madness, or death. </br> </br>
-                This has led to three approaches to magic: </br> </br>
-                Human Approach: Suppression
-                The Duchies blame magic for the Sundering. Their solution: ban it. Human mages are rare, closely monitored, and only employed for critical military purposes. Most humans view magic with suspicion and fear. Battle Priests use divine magic (prayer-based, considered "safe") instead of arcane sorcery.
-                Magic users in human lands live dangerous lives—one mistake and they're executed as dangerous heretics. </br> </br>
-                Orc Approach: Raw Power
-                Orc Shamans don't study magic—they channel it through pure will and rage. They tap into Gorthak's fury, letting raw destructive energy flow through them. It's incredibly dangerous (most Shamans don't live past 40), but devastatingly effective.
-                Orc magic is all about destruction: explosive blasts, fire from the sky, earth-shattering tremors. No subtlety, no precision—just overwhelming force. </br> </br>
-                Elven Approach: Ancient Mastery
-                The Elves remember the old ways. They still practice magic as it was meant to be—refined, elegant, controlled. Their mages spend centuries perfecting their craft. But even they're struggling. The magic is harder to control now. Spells that once were simple now require elaborate preparations.
-                And most frighteningly: their magic is fading. With each generation, Elven mages are weaker. The ancient spells their grandparents cast casually are now nearly impossible. They're losing their greatest advantage.
+        </div>
 
+        <!-- Magic in Ashenfell -->
+        <div class="col-md-6 col-12 text-center">
+            <h3 class="mt-3">Magic in Ashenfell</h3>
+            <p>
+                <strong>Before the Sundering:</strong> Magic was a science.
+                Predictable. Safe. Mages studied for decades in academies,
+                learning to channel ambient magical energy through ritualistic
+                formulae. It was used for healing, construction, communication,
+                and transportation. Warfare involved magic, but it was
+                controlled—fireball spells, protective wards, nothing
+                catastrophic. <br><br>
+                <strong>After the Sundering:</strong> Magic is dangerous. The
+                Sundering didn't eliminate magic—it destabilized it. Ambient
+                magical energy is higher now, but chaotic. Spells that once were
+                routine now risk backfiring. Mages who channel too much power
+                risk mutation, madness, or death. <br><br>
+                This has led to three approaches to magic:
+                <br><br>
+                <strong>Human Approach: Suppression</strong><br>
+                The Duchies blame magic for the Sundering. Their solution: ban
+                it. Human mages are rare, closely monitored, and only employed
+                for critical military purposes. Most humans view magic with
+                suspicion and fear. Battle Priests use divine magic
+                (prayer-based, considered "safe") instead of arcane sorcery.
+                Magic users in human lands live dangerous lives—one mistake and
+                they're executed as dangerous heretics.
+                <br><br>
+                <strong>Orc Approach: Raw Power</strong><br>
+                Orc Shamans don't study magic—they channel it through pure will
+                and rage. They tap into Gorthak's fury, letting raw destructive
+                energy flow through them. It's incredibly dangerous (most
+                Shamans don't live past 40), but devastatingly effective. Orc
+                magic is all about destruction: explosive blasts, fire from the
+                sky, earth-shattering tremors. No subtlety, no precision—just
+                overwhelming force.
+                <br><br>
+                <strong>Elven Approach: Ancient Mastery</strong><br>
+                The Elves remember the old ways. They still practice magic as it
+                was meant to be—refined, elegant, controlled. Their mages spend
+                centuries perfecting their craft. But even they're struggling.
+                The magic is harder to control now. Spells that once were simple
+                now require elaborate preparations. And most frighteningly:
+                their magic is fading. With each generation, Elven mages are
+                weaker. The ancient spells their grandparents cast casually are
+                now nearly impossible. They're losing their greatest advantage.
             </p>
-        </div>         
+        </div>
     </div>
 </div>
-
 {% endblock %}
