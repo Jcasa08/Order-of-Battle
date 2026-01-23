@@ -6,6 +6,7 @@ A site user should be able to view lore and information about the world, faction
 
 In terms of design, I wanted to create a gritty feel to match the tone of the setting, without affecting readability of the site. The layout was designed to be intuitive and easy to navigate, with various call to actions to help the site user. 
 
+The live link can be found [here.]()
 
 ## Desktop
 
@@ -367,6 +368,10 @@ The page has a functioning admin panel, courtesy of Django's built in panel. Her
 The data structure for the project is as follows:
 ![screenshot](readme-images/erd.png)
 
+### Future Features
+- Rules for the game, factions and units
+- More in-depth army builder allowing unit customisation 
+
 
 ## Testing
 
@@ -544,10 +549,80 @@ No errors were reported when using JSHint to validate the JavaScript:
 ![screenshot](readme-images/jshint.png)
 
 #### Python
+All python code was tested using Code Institute's Python Linter. Originally one error was shown of the lists model.py as the line length of a fstring was too long:
+
+![screenshot](readme-images/lists-python-error.png)
+
+Which was corrected and showed no errors:
+
+![screenshot](readme-images/lists-python.png)
+
+All other python code was error free:
+
+![screenshot](readme-images/config-python.png)
 
 
 ## Deployment
+Heroku was used to deploy the site early in development from the main branch from the repository. This enabled me to check the site not only in the development environment but also in a deployed environment.
+
+To create a Heroku app:
+
+1. Create and account with Heroku
+
+2. On the Heroku dashboard, click 'new', the 'Create app' from the dropdown that appears
+
+![screenshot](readme-images/heroku1.png)
+
+3. Follow the instructions to create a new app.
+
+4. In app settings, click on **REVEAL CONFIG VARS**
+
+5. Add the following environment variables to you settings:
+- DATABASE_URL - database connection string
+- SECRET_KEY - secret key for the app
+- CLOUDINARY_URL - Cloudinary URL for you image hosting
+
+6. Once setup is complete, click on the deploy tab and connect your GitHub account, ensuring that the correct repository is selected.
+
+![screenshot](readme-images/heroku2.png)
+
+7. Scroll down to find manual deployment and select the branch you wish to deploy from.
+
+![screenshot](readme-images/heroku3.png)
+
+The live link for this site can be found at the top of the README
 
 ## AI Usage
 
+As this project was developed as a capstone project for Code Institute's AI Augmented Programming course, AI was used throughout the project. Two main AI models were used for this project, these were Claude Sonnet and Midjourney.
+
+### Claude Sonnet
+
+Claude was used during the whole project, from helping me collate ideas and come up with initial plans, to fleshing out content to help the site feel more rounded. Claude was also used in VS Code to pair program with. It was used for debugging, reformatting and allowing it to complete certain sections of code with explicit instructions.
+
+Below is an example of how I used Claude AI to help me fix an error regarding images not loading.
+
+![screenshot](readme-images/claude1.png)
+
+![screenshot](readme-images/claude2.png)
+
+![screenshot](readme-images/claude3.png)
+
+### Midjourney
+
+Midjourney is an AI image generator and was used to generate images for the entire site. Style references were used so that the AI get a consistent theme across all the images, which would prevent the site from feeling dijointed. As the AI isn't perfect, I would often have to reprompt or ask the AI to edit certain images.
+
+![screenshot](readme-images/midjourney1.png)
+
+![screenshot](readme-images/midjourney2.png)
+
+Overall, AI proved to be an invaluable tool when creating this site. It was able to take tedious tasks and complete them relatively quickly. Whilst the AI's code does still need to be reviewed to ensure it is free of errors, the time it saves outweighs this. Furthermore, the ability to debug with or ask the AI to explain complex topic really helps to really understand the code and as a relatively new coder, it's priceless.
+
+Although the use of AI image generators are having a negative impact on artists, Midjourney was used as coding was prioritised over image sourcing. In the future, I would hope to be able to not use images created by AI.
+
 ## Credits
+ ### Content
+ - All content was created by myself but exapnded upon by AI
+
+### Media
+- All images were created by Midjourney
